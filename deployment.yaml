@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "sinhbgprocess.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "sinhbgprocess.labels" . | nindent 4 }}
+    fnf_app_id1: "{{ .Values.labels.fnf_app_id1 }}"
+    fnf_app_name: "{{ .Values.labels.fnf_app_name }}"
+    fnf_businessservice_id: "{{ .Values.labels.fnf_businessservice_id }}"
+    fnf_costcenter: "{{ .Values.labels.fnf_costcenter }}"
+    fnf_datacenter: "{{ .Values.labels.fnf_datacenter }}"
+    fnf_lineofbusiness_id: "{{ .Values.labels.fnf_lineofbusiness_id }}"
+    fnf_parenthosting_id: "{{ .Values.labels.fnf_parenthosting_id }}"
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "sinhbgprocess.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "sinhbgprocess.selectorLabels" . | nindent 8 }}
+        azure.workload.identity/use: "true"
+      annotations:
+        dapr.io/enabled: "true" 
+        dapr.io/app-id: "{{ .Values.dapr.app_id }}" 
+        dapr.io/app-port: "{{ .Values.dapr.app_port }}" 
+        dapr.io/log-level: "{{ .Values.dapr.log_level }}" 
+        dapr.io/enable-api-logging: "true" 
+        dapr.io/sidecar-cpu-limit: "{{ .Values.dapr.sidecar_cpu_limit }}"
+        dapr.io/sidecar-memory-limit: "{{ .Values.dapr.sidecar_memory_limit }}"
+        dapr.io/sidecar-cpu-request: "{{ .Values.dapr.sidecar_cpu_request }}"
+        dapr.io/sidecar-memory-request: "{{ .Values.dapr.sidecar_memory_request }}"
+        {{- with .Values.podAnnotations }}  
+        {{- toYaml . | nindent 8 }}  
+        {{- end }}
+    spec:
+      serviceAccountName: {{ include "sinhbgprocess.serviceAccountName" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          env:
+            {{- range $k, $v := .Values.env }}
+              - name: {{ $k | quote }}
+                value: {{ $v | quote }}
+            {{- end }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /_health
+              port: http
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /_health
+              port: http
+            initialDelaySeconds: 60
+            periodSeconds: 30          
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -1,0 +1,15 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: {{ .Values.pubsub.componentName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: {{ .Values.pubsub.type }}
+  version: {{ .Values.pubsub.version }}
+  metadata:
+    - name: namespaceName
+      value: {{ .Values.pubsub.namespaceName }}
+    - name: azureClientId
+      value: {{ .Values.azureidentityClientID }}
+scopes:
+  - {{ .Values.dapr.app_id }}

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sinhbgprocess.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "sinhbgprocess.labels" . | nindent 4 }}
+    fnf_app_id1: "{{ .Values.labels.fnf_app_id1 }}"
+    fnf_app_name: "{{ .Values.labels.fnf_app_name }}"
+    fnf_businessservice_id: "{{ .Values.labels.fnf_businessservice_id }}"
+    fnf_costcenter: "{{ .Values.labels.fnf_costcenter }}"
+    fnf_datacenter: "{{ .Values.labels.fnf_datacenter }}"
+    fnf_lineofbusiness_id: "{{ .Values.labels.fnf_lineofbusiness_id }}"
+    fnf_parenthosting_id: "{{ .Values.labels.fnf_parenthosting_id }}"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sinhbgprocess.selectorLabels" . | nindent 4 }}
