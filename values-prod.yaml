@@ -1,0 +1,113 @@
+# Default values for webappdeployment.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+#Custom attributes starts here
+namespace: prod-aks-sinhbgprocess
+azureidentitylabels: sinhagentapi-apiidentity
+azureidentityBinding: sinhagentapi-apiidentity-binding
+azureidentityClientID: 1103c29e-4b59-45c1-b9c5-4dec3304b4ea
+azureidentityResourceID: /subscriptions/c48f5cd5-8dd0-4eaa-b46e-a351002cdabd/resourceGroups/FNF-RG-SINH-Prod/providers/Microsoft.ManagedIdentity/userAssignedIdentities/fnf-sinh-mi-p1-use2-01
+env:
+  "ASPNETCORE_ENVIRONMENT": "Production"
+  "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true"
+#Custom attributes ends here
+labels:
+    fnf_app_id1: "1944"
+    fnf_app_name: "SalesinHere"
+    fnf_businessservice_id: "1944.PROD"
+    fnf_costcenter: "01400.901771.160"
+    fnf_datacenter: "Azure"
+    fnf_lineofbusiness_id: "4"
+    fnf_parenthosting_id: "4.1"
+image:
+  repository: fnflevacrappprod.azurecr.io/sinh/sinhbgprocess
+  pullPolicy: IfNotPresent
+  tag: "v0.1"
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: "sinhbgprocess"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "prod-aks-sinhbgprocess-sa"
+
+podAnnotations: {}
+
+dapr:
+  app_id: "sinhbgprocess"
+  app_port: "8080"
+  log_level: "info" #debug, info, warn, error
+  sidecar_cpu_limit: "250m"
+  sidecar_memory_limit: "256Mi"
+  sidecar_cpu_request: "100m"
+  sidecar_memory_request: "128Mi"
+
+pubsub:
+  componentName: pubsub
+  type: pubsub.azure.servicebus.topics   
+  version: v1                          
+  namespaceName: "fnf-geai-sbns-p1-use2-01.servicebus.windows.net"
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  runAsUser: 1019
+  allowPrivilegeEscalation: false
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: 
+    kubernetes.io/ingress.class:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true" 
+    nginx.ingress.kubernetes.io/secure-backends: "true"    
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "sinhbgprocess-cookie"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    nginx.ingress.kubernetes.io/session-cookie-change-on-failure : "true"
+
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+    nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
+  hosts:
+    - host: 
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+   - secretName: 
+     hosts:
+       - 
+
+resources:
+  limits:
+    cpu: 750m
+    memory: 750Mi
+  requests:
+    cpu: 500m
+    memory: 500Mi
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 60
+  targetMemoryUtilizationPercentage: 60
+nodeSelector: {}
+tolerations: []
+affinity: {}
