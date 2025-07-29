@@ -1,63 +1,57 @@
 ﻿// <copyright file="Program.cs" company="FNF">
 // Copyright (c) FNF. All rights reserved.
 // </copyright>.
+using System.Diagnostics.CodeAnalysis;
+using Fnf.SalesInHere.Services.ApiGateway.Extensions;
 
-using Fnf.SalesInHere.Common.Diagnostics;
-using Fnf.SalesInHere.Common.PulseAPIWrapper;
-using Fnf.SalesInHere.Connectors.Dapr;
-using Fnf.SalesInHere.Connectors.HybridCache;
-using Fnf.SalesInHere.Services.BackgroundProcessor;
-using Fnf.SalesInHere.Services.BackgroundProcessor.Endpoints;
-using Fnf.SalesInHere.Services.Base.Helpers;
-using Fnf.SalesInHere.Services.Base.Models;
+namespace Fnf.SalesInHere.Services.ApiGateway;
 
-var builder = WebApplication.CreateBuilder(args);
-
-_ = builder.Host.AddConfiguration();
-
-_ = builder.UseLogger();
-
-// Disables endpoint override warning message when using IConfiguration for Kestrel endpoint.
-_ = builder.WebHost.UseUrls();
-_ = builder.Services.AddCorsForApiAccess(builder.Configuration);
-
-// Health check
-_ = builder.Services.AddHealthChecks();
-
-// Add API versionning
-_ = builder.Services.AddProblemDetails();
-
-_ = builder.Services.AddDaprServices();
-_ = builder.Services.AddPulseApiServices(builder.Configuration);
-
-// Init Redis Cache
-RedisConnectionMultiplexer.Initialize(builder.Configuration);
-
-_ = builder.Services.AddHybridCacheStoreWithRedis(
-    new HybridCacheStoreOptions { CacheKeyPrefix = "sinh-app", MaxCacheSizeMB = 10 },
-    RedisConnectionMultiplexer.Instance);
-
-builder.Services.AddHealthChecks();
-
-var app = builder.Build();
-
-_ = app.UseRouting();
-_ = app.UseCors();
-
-// Dapr subscriptions
-app.UseCloudEvents();
-app.UseEndpoints(endpoints =>
+/// <summary>
+/// Program
+/// </summary>
+[ExcludeFromCodeCoverage]
+public static class Program
 {
-    _ = endpoints.MapSubscribeHandler();
-});
+    /// <summary>
+    /// Defines the entry point of the application.
+    /// </summary>
+    /// <param name="args">The arguments.</param>
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-_ = app.MapHealthChecks("/_health");
+        _ = builder.Host.AddConfiguration();
 
-var pubsubComponentName = builder.Configuration["ServiceBusOptions:DaprComponentName"];
-var pulseCacheRequestTopic = builder.Configuration["ServiceBusOptions:PulseCacheRequestTopic"];
+        // Disables endpoint override warning message when using IConfiguration for Kestrel endpoint.
+        _ = builder.WebHost.UseUrls();
+        _ = builder.Services.AddCorsForApiAccess(builder.Configuration);
 
-app.MapPost("api/pulse-caching-request", PulseCachingApi.PulseCachingAsync)
-    .Accepts<PulseCachingRequest>(BaseApi.ContentType)
-    .WithTopic(pubsubComponentName, pulseCacheRequestTopic);
+        _ = builder.Services.AddOutputCaching();
 
-await app.RunAsync().ConfigureAwait(false);
+        _ = builder.Services.AddHealthChecks();
+
+        // Add services to the container.
+        _ = builder.Services.AddReverseProxy()
+            .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        _ = app.UseCors();
+        _ = app.UseOutputCache();
+        _ = app.MapHealthChecks("/_health");
+        _ = app.MapReverseProxy();
+        
+		var color =builder.Configuration["Color"] ?? "unknown"
+		
+        _ = app.MapGet("/", () =>
+        {
+            return Results.Ok("API Gateway Running...");
+        });
+        _ = app.MapGet("/color", () =>
+		{
+			return Results.Ok($"Color: {color}");
+        });
+		app.Run();
+    }
+}

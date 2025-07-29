@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>Fnf.SalesInHere.Services.ApiGateway.Secrets</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Fnf.SalesInHere.Common.ApiAuthorization\Fnf.SalesInHere.Common.ApiAuthorization.csproj" />
+    <ProjectReference Include="..\..\Common\Fnf.SalesInHere.Common.Helpers\Fnf.SalesInHere.Common.Helpers.csproj" />
+    <ProjectReference Include="..\..\Common\Fnf.SalesInHere.Common.SwaggerExtension\Fnf.SalesInHere.Common.SwaggerExtension.csproj" />
+  </ItemGroup>
+	<Import Project="..\..\Shared\Shared-Project-Properties.props" />
+	<ItemGroup>
+	  <PackageReference Update="SonarAnalyzer.CSharp" Version="9.32.0.97167">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+</Project>
