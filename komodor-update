@@ -1,0 +1,3 @@
+helm repo update
+helm get values komodor-agent 
+helm upgrade komodor-agent komodorio/komodor-agent -n komodor
