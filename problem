@@ -1,0 +1,13 @@
+For TM project we need to implement code merge on Legacy data and EXOS Data. Legacy data will be migrated to EXOS and stored in LegacyDefaultDataDB. In order to access through PBI and SSRS, we need below accounts has access to this data base in lowers and prod. 
+
+BI got the inital access but it's limited and couldn't provide the functions needed for reporting. 
+
+Prod:
+bi-exos-app-01
+SVC-ProdBI2@svclnk.com
+
+Databases: 
+LegacyDefaultDataDB
+
+Access: Access needs to be mimicked similar to these accounts how they were setup on EnterpriseReportingDB.
+
