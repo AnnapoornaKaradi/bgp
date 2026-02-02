@@ -1,0 +1,992 @@
+2026-02-02T07:08:20.4871877Z 
+2026-02-02T07:08:20.4881234Z An execution plan has been generated and is shown below.
+2026-02-02T07:08:20.4881864Z Resource actions are indicated with the following symbols:
+2026-02-02T07:08:20.4882661Z   [32m+[0m create
+2026-02-02T07:08:20.4883079Z [0m
+2026-02-02T07:08:20.4883502Z Terraform will perform the following actions:
+2026-02-02T07:08:20.4883723Z 
+2026-02-02T07:08:20.5572140Z [1m  # azurerm_monitor_diagnostic_setting.env_to_evh["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_datascience-amlworkspacepoc"][0m will be created[0m[0m
+2026-02-02T07:08:20.5574165Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_evh" {
+2026-02-02T07:08:20.5577670Z       [32m+[0m [0m[1m[0meventhub_authorization_rule_id[0m[0m = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.EventHub/namespaces/evh-diag-sandbox-eus2-01/authorizationRules/default_diagnostic_logging_rule"
+2026-02-02T07:08:20.5580494Z       [32m+[0m [0m[1m[0meventhub_name[0m[0m                  = "evh-diag-sandbox-eus2-01"
+2026-02-02T07:08:20.5581111Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.5581701Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.5582256Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_event_hub"
+2026-02-02T07:08:20.5615179Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/DataScience-AMLWorkspacePOC"
+2026-02-02T07:08:20.5616187Z 
+2026-02-02T07:08:20.5620295Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5623950Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.5624688Z         }
+2026-02-02T07:08:20.5626548Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5627522Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.5628180Z         }
+2026-02-02T07:08:20.5628707Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5631264Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.5633377Z         }
+2026-02-02T07:08:20.5634997Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5635786Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.5636837Z         }
+2026-02-02T07:08:20.5637582Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5640606Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.5641408Z         }
+2026-02-02T07:08:20.5643216Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5644645Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.5645429Z         }
+2026-02-02T07:08:20.5646227Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5648105Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.5649549Z         }
+2026-02-02T07:08:20.5650709Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5651543Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.5652075Z         }
+2026-02-02T07:08:20.5652675Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5654008Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.5656254Z         }
+2026-02-02T07:08:20.5657310Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5658309Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.5658920Z         }
+2026-02-02T07:08:20.5661097Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5662622Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.5663390Z         }
+2026-02-02T07:08:20.5663999Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5664758Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.5665430Z         }
+2026-02-02T07:08:20.5667402Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5668811Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.5669649Z         }
+2026-02-02T07:08:20.5670423Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5674212Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.5676498Z         }
+2026-02-02T07:08:20.5677366Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5679481Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.5681374Z         }
+2026-02-02T07:08:20.5682120Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5683767Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.5684356Z         }
+2026-02-02T07:08:20.5684918Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5687156Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.5688083Z         }
+2026-02-02T07:08:20.5693539Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5694528Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.5695130Z         }
+2026-02-02T07:08:20.5696897Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5697659Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.5698279Z         }
+2026-02-02T07:08:20.5698918Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5701828Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.5702627Z         }
+2026-02-02T07:08:20.5703699Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5704891Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.5705703Z         }
+2026-02-02T07:08:20.5706315Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5706992Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.5707528Z         }
+2026-02-02T07:08:20.5708082Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5708830Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.5709316Z         }
+2026-02-02T07:08:20.5709813Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5710632Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.5712670Z         }
+2026-02-02T07:08:20.5713387Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5714084Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.5714603Z         }
+2026-02-02T07:08:20.5715189Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5715992Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.5716593Z         }
+2026-02-02T07:08:20.5716950Z 
+2026-02-02T07:08:20.5717463Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.5718121Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.5718908Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.5721477Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.5722005Z 
+2026-02-02T07:08:20.5722564Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.5723636Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.5724785Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.5725652Z             }
+2026-02-02T07:08:20.5726140Z         }
+2026-02-02T07:08:20.5726382Z 
+2026-02-02T07:08:20.5726903Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.5727551Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.5728214Z           [32m+[0m [0m[1m[0menabled[0m[0m  = false
+2026-02-02T07:08:20.5728694Z         }
+2026-02-02T07:08:20.5729112Z     }
+2026-02-02T07:08:20.5729360Z 
+2026-02-02T07:08:20.5733808Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_datascience-amlworkspacepoc"][0m will be created[0m[0m
+2026-02-02T07:08:20.5735335Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.5736154Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.5736935Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.5739567Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.5741058Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.5742246Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/DataScience-AMLWorkspacePOC"
+2026-02-02T07:08:20.5742967Z 
+2026-02-02T07:08:20.5743494Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5744169Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.5744982Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.5746673Z 
+2026-02-02T07:08:20.5747633Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.5748377Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.5749127Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.5749642Z             }
+2026-02-02T07:08:20.5750149Z         }
+2026-02-02T07:08:20.5750589Z 
+2026-02-02T07:08:20.5751127Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.5751763Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.5752490Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.5753332Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.5753802Z 
+2026-02-02T07:08:20.5754965Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.5755951Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.5756706Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.5757299Z             }
+2026-02-02T07:08:20.5757762Z         }
+2026-02-02T07:08:20.5758504Z 
+2026-02-02T07:08:20.5759163Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.5759791Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.5760563Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.5761026Z         }
+2026-02-02T07:08:20.5761321Z     }
+2026-02-02T07:08:20.5761468Z 
+2026-02-02T07:08:20.5876256Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_sl_exos_ai_hub2"][0m will be created[0m[0m
+2026-02-02T07:08:20.5887091Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.5888620Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.5890079Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.5891688Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.5892666Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.5893883Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/sl_exos_ai_hub2"
+2026-02-02T07:08:20.5894379Z 
+2026-02-02T07:08:20.5894906Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5895612Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.5896077Z         }
+2026-02-02T07:08:20.5896587Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5897271Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.5897742Z         }
+2026-02-02T07:08:20.5898247Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5898937Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.5899401Z         }
+2026-02-02T07:08:20.5899910Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5900657Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.5901115Z         }
+2026-02-02T07:08:20.5901621Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5902310Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.5902757Z         }
+2026-02-02T07:08:20.5903245Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5903907Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.5904356Z         }
+2026-02-02T07:08:20.5904863Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5905539Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.5905998Z         }
+2026-02-02T07:08:20.5906515Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5907167Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.5907622Z         }
+2026-02-02T07:08:20.5908132Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5910284Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.5910810Z         }
+2026-02-02T07:08:20.5911322Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5911962Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.5912401Z         }
+2026-02-02T07:08:20.5913309Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5913964Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.5914419Z         }
+2026-02-02T07:08:20.5914915Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5915545Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.5915979Z         }
+2026-02-02T07:08:20.5916487Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5917136Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.5917678Z         }
+2026-02-02T07:08:20.5918234Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5919453Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.5919910Z         }
+2026-02-02T07:08:20.5920567Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5921217Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.5921674Z         }
+2026-02-02T07:08:20.5922432Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5923090Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.5923545Z         }
+2026-02-02T07:08:20.5924054Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5924678Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.5925465Z         }
+2026-02-02T07:08:20.5925998Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5926669Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.5927123Z         }
+2026-02-02T07:08:20.5927624Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5928265Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.5928721Z         }
+2026-02-02T07:08:20.5929212Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5929860Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.5930416Z         }
+2026-02-02T07:08:20.5930932Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5931588Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.5932036Z         }
+2026-02-02T07:08:20.5932542Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5933188Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.5933636Z         }
+2026-02-02T07:08:20.5934141Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5934798Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.5935247Z         }
+2026-02-02T07:08:20.5936836Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5937540Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.5937997Z         }
+2026-02-02T07:08:20.5938500Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5939114Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.5939561Z         }
+2026-02-02T07:08:20.5940080Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.5940823Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.5941260Z         }
+2026-02-02T07:08:20.5941396Z 
+2026-02-02T07:08:20.5941865Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.5942506Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.5943216Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.5943921Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.5944159Z 
+2026-02-02T07:08:20.5944816Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.5945478Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.5946160Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.5946614Z             }
+2026-02-02T07:08:20.5946990Z         }
+2026-02-02T07:08:20.5947159Z 
+2026-02-02T07:08:20.5947943Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.5948567Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.5949191Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.5949524Z         }
+2026-02-02T07:08:20.5949799Z     }
+2026-02-02T07:08:20.5949933Z 
+2026-02-02T07:08:20.6049109Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_sl_exos_ai_hub_west_us3"][0m will be created[0m[0m
+2026-02-02T07:08:20.6097414Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6098639Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6099401Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6100762Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6102225Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6103582Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/sl_exos_ai_hub_west_us3"
+2026-02-02T07:08:20.6111832Z 
+2026-02-02T07:08:20.6112620Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6113286Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.6113747Z         }
+2026-02-02T07:08:20.6114248Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6114928Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.6115429Z         }
+2026-02-02T07:08:20.6115932Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6116608Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.6117073Z         }
+2026-02-02T07:08:20.6120026Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6120794Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.6121224Z         }
+2026-02-02T07:08:20.6121712Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6122376Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.6122835Z         }
+2026-02-02T07:08:20.6123336Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6123994Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.6124436Z         }
+2026-02-02T07:08:20.6124944Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6125596Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.6126064Z         }
+2026-02-02T07:08:20.6126568Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6127231Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.6127683Z         }
+2026-02-02T07:08:20.6128190Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6128836Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.6129283Z         }
+2026-02-02T07:08:20.6129787Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6130520Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.6130966Z         }
+2026-02-02T07:08:20.6131472Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6132123Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.6132577Z         }
+2026-02-02T07:08:20.6133076Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6133715Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.6134557Z         }
+2026-02-02T07:08:20.6135056Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6135618Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.6136045Z         }
+2026-02-02T07:08:20.6136571Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6137219Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.6137658Z         }
+2026-02-02T07:08:20.6138162Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6139240Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.6139702Z         }
+2026-02-02T07:08:20.6140304Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6140970Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.6141424Z         }
+2026-02-02T07:08:20.6141925Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6142577Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.6143251Z         }
+2026-02-02T07:08:20.6144372Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6145046Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.6145497Z         }
+2026-02-02T07:08:20.6145983Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6146628Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.6147044Z         }
+2026-02-02T07:08:20.6147545Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6148183Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.6148629Z         }
+2026-02-02T07:08:20.6149939Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6150744Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.6151208Z         }
+2026-02-02T07:08:20.6151578Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6152162Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.6152610Z         }
+2026-02-02T07:08:20.6153106Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6153749Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.6154182Z         }
+2026-02-02T07:08:20.6154681Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6155327Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.6155777Z         }
+2026-02-02T07:08:20.6156274Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6156885Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.6157840Z         }
+2026-02-02T07:08:20.6158372Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6159007Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.6159431Z         }
+2026-02-02T07:08:20.6159593Z 
+2026-02-02T07:08:20.6160061Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6160823Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6161548Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6162252Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6162473Z 
+2026-02-02T07:08:20.6163005Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6163672Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6164341Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6164788Z             }
+2026-02-02T07:08:20.6165153Z         }
+2026-02-02T07:08:20.6165302Z 
+2026-02-02T07:08:20.6165792Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6166549Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.6167170Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6167595Z         }
+2026-02-02T07:08:20.6167963Z     }
+2026-02-02T07:08:20.6168121Z 
+2026-02-02T07:08:20.6269440Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_sl_title"][0m will be created[0m[0m
+2026-02-02T07:08:20.6280917Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6281802Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6282553Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6283844Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6284834Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6286018Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/sl_title"
+2026-02-02T07:08:20.6286867Z 
+2026-02-02T07:08:20.6287398Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6295068Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.6298104Z         }
+2026-02-02T07:08:20.6298632Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6299428Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.6299893Z         }
+2026-02-02T07:08:20.6300489Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6301179Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.6301633Z         }
+2026-02-02T07:08:20.6302125Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6302747Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.6303204Z         }
+2026-02-02T07:08:20.6303704Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6304369Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.6304825Z         }
+2026-02-02T07:08:20.6305326Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6305988Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.6306435Z         }
+2026-02-02T07:08:20.6320744Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6321493Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.6321948Z         }
+2026-02-02T07:08:20.6322450Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6323104Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.6323550Z         }
+2026-02-02T07:08:20.6324051Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6324695Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.6325164Z         }
+2026-02-02T07:08:20.6325661Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6326292Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.6326724Z         }
+2026-02-02T07:08:20.6327227Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6327842Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.6328280Z         }
+2026-02-02T07:08:20.6333463Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6336968Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.6337459Z         }
+2026-02-02T07:08:20.6337963Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6338601Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.6339051Z         }
+2026-02-02T07:08:20.6340673Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6341326Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.6342343Z         }
+2026-02-02T07:08:20.6342857Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6343660Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.6344107Z         }
+2026-02-02T07:08:20.6344750Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6345414Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.6346033Z         }
+2026-02-02T07:08:20.6346529Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6347317Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.6347775Z         }
+2026-02-02T07:08:20.6348283Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6348948Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.6349404Z         }
+2026-02-02T07:08:20.6349907Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6350954Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.6351637Z         }
+2026-02-02T07:08:20.6352147Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6352784Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.6353342Z         }
+2026-02-02T07:08:20.6353824Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6354472Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.6354922Z         }
+2026-02-02T07:08:20.6355425Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6356060Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.6356513Z         }
+2026-02-02T07:08:20.6357012Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6357669Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.6358114Z         }
+2026-02-02T07:08:20.6358611Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6359328Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.6359786Z         }
+2026-02-02T07:08:20.6360385Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6362044Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.6362522Z         }
+2026-02-02T07:08:20.6363041Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6363666Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.6364096Z         }
+2026-02-02T07:08:20.6364259Z 
+2026-02-02T07:08:20.6364744Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6365385Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6366092Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6366780Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6367526Z 
+2026-02-02T07:08:20.6368109Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6368764Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6369612Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6370061Z             }
+2026-02-02T07:08:20.6370526Z         }
+2026-02-02T07:08:20.6370672Z 
+2026-02-02T07:08:20.6371163Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6371770Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.6372649Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6373102Z         }
+2026-02-02T07:08:20.6373467Z     }
+2026-02-02T07:08:20.6373626Z 
+2026-02-02T07:08:20.6559506Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.machinelearningservices_workspaces_sltitle"][0m will be created[0m[0m
+2026-02-02T07:08:20.6572801Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6580096Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6581000Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6582291Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6583294Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6586782Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.MachineLearningServices/workspaces/sltitle"
+2026-02-02T07:08:20.6587541Z 
+2026-02-02T07:08:20.6588059Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6588782Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.6589678Z         }
+2026-02-02T07:08:20.6590255Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6590919Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.6591363Z         }
+2026-02-02T07:08:20.6593689Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6596392Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.6596954Z         }
+2026-02-02T07:08:20.6598528Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6599185Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.6599630Z         }
+2026-02-02T07:08:20.6600134Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6600933Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.6601393Z         }
+2026-02-02T07:08:20.6601893Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6602561Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.6603024Z         }
+2026-02-02T07:08:20.6603523Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6613160Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.6613770Z         }
+2026-02-02T07:08:20.6617352Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6617861Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.6618217Z         }
+2026-02-02T07:08:20.6618622Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6619188Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.6619521Z         }
+2026-02-02T07:08:20.6619957Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6621976Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.6630634Z         }
+2026-02-02T07:08:20.6642405Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6643772Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.6644286Z         }
+2026-02-02T07:08:20.6644799Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6645452Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.6645893Z         }
+2026-02-02T07:08:20.6647620Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6653242Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.6653744Z         }
+2026-02-02T07:08:20.6654332Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6654983Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.6655434Z         }
+2026-02-02T07:08:20.6655937Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6656586Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.6657031Z         }
+2026-02-02T07:08:20.6657529Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6658193Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.6658949Z         }
+2026-02-02T07:08:20.6659447Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6660086Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.6660708Z         }
+2026-02-02T07:08:20.6661221Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6661888Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.6662343Z         }
+2026-02-02T07:08:20.6667309Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6668000Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.6668462Z         }
+2026-02-02T07:08:20.6668965Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6669608Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.6670652Z         }
+2026-02-02T07:08:20.6671229Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6672130Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.6672578Z         }
+2026-02-02T07:08:20.6673055Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6674639Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.6675092Z         }
+2026-02-02T07:08:20.6675589Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6676238Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.6676686Z         }
+2026-02-02T07:08:20.6677180Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6679429Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.6679880Z         }
+2026-02-02T07:08:20.6680486Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6681123Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.6681555Z         }
+2026-02-02T07:08:20.6687543Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6689406Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.6689890Z         }
+2026-02-02T07:08:20.6690055Z 
+2026-02-02T07:08:20.6690657Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6691308Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6692013Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6692714Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6692937Z 
+2026-02-02T07:08:20.6693469Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6694209Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6694884Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6695334Z             }
+2026-02-02T07:08:20.6695703Z         }
+2026-02-02T07:08:20.6695849Z 
+2026-02-02T07:08:20.6696341Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6696947Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.6697586Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6698007Z         }
+2026-02-02T07:08:20.6698374Z     }
+2026-02-02T07:08:20.6698532Z 
+2026-02-02T07:08:20.6704065Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-exos-home-scanner-sandbox_providers_microsoft.storage_storageaccounts_stexoshomescanneryo"][0m will be created[0m[0m
+2026-02-02T07:08:20.6705302Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6711484Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6714641Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6715596Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6716648Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6717531Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo"
+2026-02-02T07:08:20.6717893Z 
+2026-02-02T07:08:20.6718273Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6718747Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6719263Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6719428Z 
+2026-02-02T07:08:20.6719825Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6720589Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6721451Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6721787Z             }
+2026-02-02T07:08:20.6722053Z         }
+2026-02-02T07:08:20.6722178Z 
+2026-02-02T07:08:20.6722533Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6723002Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6723513Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6724018Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6724192Z 
+2026-02-02T07:08:20.6724582Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6725056Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6725551Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6725878Z             }
+2026-02-02T07:08:20.6726148Z         }
+2026-02-02T07:08:20.6726248Z 
+2026-02-02T07:08:20.6726612Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6727064Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T07:08:20.6727520Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6727852Z         }
+2026-02-02T07:08:20.6728211Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6728653Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T07:08:20.6735242Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6742287Z         }
+2026-02-02T07:08:20.6747097Z     }
+2026-02-02T07:08:20.6757322Z 
+2026-02-02T07:08:20.6773935Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-exos-home-scanner-sandbox_providers_microsoft.web_serverfarms_plan-exos-home-scanner-api"][0m will be created[0m[0m
+2026-02-02T07:08:20.6787467Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6788239Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6789008Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6790414Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6791432Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6792637Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Web/serverFarms/plan-exos-home-scanner-api"
+2026-02-02T07:08:20.6793132Z 
+2026-02-02T07:08:20.6793642Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6794265Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6795301Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6795549Z 
+2026-02-02T07:08:20.6796087Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6796746Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6797432Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6797881Z             }
+2026-02-02T07:08:20.6798251Z         }
+2026-02-02T07:08:20.6798393Z 
+2026-02-02T07:08:20.6798870Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6799514Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6800360Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6801097Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6801321Z 
+2026-02-02T07:08:20.6801840Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6802676Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6803372Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6803821Z             }
+2026-02-02T07:08:20.6804184Z         }
+2026-02-02T07:08:20.6804344Z 
+2026-02-02T07:08:20.6804829Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6805440Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.6806068Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6806494Z         }
+2026-02-02T07:08:20.6806861Z     }
+2026-02-02T07:08:20.6806987Z 
+2026-02-02T07:08:20.6808225Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-sandbox-eduardo_providers_microsoft.sql_servers_sqlserver-eduardo-free-server_databases_db-exos-home-scanner"][0m will be created[0m[0m
+2026-02-02T07:08:20.6809305Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6810068Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6810938Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6812230Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6813332Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6814598Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-sandbox-eduardo/providers/Microsoft.Sql/servers/sqlserver-eduardo-free-server/databases/db-exos-home-scanner"
+2026-02-02T07:08:20.6815126Z 
+2026-02-02T07:08:20.6815628Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6816271Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AutomaticTuning"
+2026-02-02T07:08:20.6816721Z         }
+2026-02-02T07:08:20.6817232Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6817841Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Blocks"
+2026-02-02T07:08:20.6818298Z         }
+2026-02-02T07:08:20.6818811Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6819472Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DatabaseWaitStatistics"
+2026-02-02T07:08:20.6819932Z         }
+2026-02-02T07:08:20.6820547Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6821170Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Deadlocks"
+2026-02-02T07:08:20.6821622Z         }
+2026-02-02T07:08:20.6848681Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6849792Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DevOpsOperationsAudit"
+2026-02-02T07:08:20.6850821Z         }
+2026-02-02T07:08:20.6851838Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6852931Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Errors"
+2026-02-02T07:08:20.6855354Z         }
+2026-02-02T07:08:20.6857864Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6858948Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "QueryStoreRuntimeStatistics"
+2026-02-02T07:08:20.6859788Z         }
+2026-02-02T07:08:20.6865282Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6865875Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "QueryStoreWaitStatistics"
+2026-02-02T07:08:20.6866282Z         }
+2026-02-02T07:08:20.6866725Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6867270Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "SQLInsights"
+2026-02-02T07:08:20.6867713Z         }
+2026-02-02T07:08:20.6868188Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6868964Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "SQLSecurityAuditEvents"
+2026-02-02T07:08:20.6869391Z         }
+2026-02-02T07:08:20.6869886Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6871038Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Timeouts"
+2026-02-02T07:08:20.6871461Z         }
+2026-02-02T07:08:20.6871600Z 
+2026-02-02T07:08:20.6872056Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.6872660Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.6873330Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.6874011Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.6874243Z 
+2026-02-02T07:08:20.6874769Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.6875421Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.6876053Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.6876478Z             }
+2026-02-02T07:08:20.6876819Z         }
+2026-02-02T07:08:20.6877041Z 
+2026-02-02T07:08:20.6877529Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6878115Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Basic"
+2026-02-02T07:08:20.6878726Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6879130Z         }
+2026-02-02T07:08:20.6879596Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6880379Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InstanceAndAppAdvanced"
+2026-02-02T07:08:20.6881024Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6881438Z         }
+2026-02-02T07:08:20.6881880Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.6882456Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "WorkloadManagement"
+2026-02-02T07:08:20.6883051Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.6883450Z         }
+2026-02-02T07:08:20.6883802Z     }
+2026-02-02T07:08:20.6883960Z 
+2026-02-02T07:08:20.6908302Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-titlemanagement-eus2-01_providers_microsoft.machinelearningservices_workspaces_hub-titlemanagement-wus3-01"][0m will be created[0m[0m
+2026-02-02T07:08:20.6911099Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T07:08:20.6912124Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.6914195Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.6915768Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.6916939Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.6921963Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-titlemanagement-eus2-01/providers/Microsoft.MachineLearningServices/workspaces/hub-titlemanagement-wus3-01"
+2026-02-02T07:08:20.6928940Z 
+2026-02-02T07:08:20.6929643Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6930428Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterEvent"
+2026-02-02T07:08:20.6930878Z         }
+2026-02-02T07:08:20.6931362Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6931998Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeClusterNodeEvent"
+2026-02-02T07:08:20.6932380Z         }
+2026-02-02T07:08:20.6932833Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6933452Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeCpuGpuUtilization"
+2026-02-02T07:08:20.6933928Z         }
+2026-02-02T07:08:20.6934396Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6935037Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlComputeJobEvent"
+2026-02-02T07:08:20.6935451Z         }
+2026-02-02T07:08:20.6935907Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6941648Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AmlRunStatusChangedEvent"
+2026-02-02T07:08:20.6942150Z         }
+2026-02-02T07:08:20.6958316Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6959148Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ComputeInstanceEvent"
+2026-02-02T07:08:20.6959574Z         }
+2026-02-02T07:08:20.6960040Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6960716Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelChangeEvent"
+2026-02-02T07:08:20.6961162Z         }
+2026-02-02T07:08:20.6961632Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6962261Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataLabelReadEvent"
+2026-02-02T07:08:20.6962649Z         }
+2026-02-02T07:08:20.6963087Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6963655Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetChangeEvent"
+2026-02-02T07:08:20.6964070Z         }
+2026-02-02T07:08:20.6964573Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6965221Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataSetReadEvent"
+2026-02-02T07:08:20.6965654Z         }
+2026-02-02T07:08:20.6966662Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6967295Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreChangeEvent"
+2026-02-02T07:08:20.6967803Z         }
+2026-02-02T07:08:20.6968295Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6974546Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DataStoreReadEvent"
+2026-02-02T07:08:20.6975190Z         }
+2026-02-02T07:08:20.6975708Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6976303Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventACI"
+2026-02-02T07:08:20.6977072Z         }
+2026-02-02T07:08:20.6979627Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6985636Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentEventAKS"
+2026-02-02T07:08:20.6986179Z         }
+2026-02-02T07:08:20.6986685Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6987342Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DeploymentReadEvent"
+2026-02-02T07:08:20.6988173Z         }
+2026-02-02T07:08:20.6988809Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6989615Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentChangeEvent"
+2026-02-02T07:08:20.6990063Z         }
+2026-02-02T07:08:20.6990807Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6991441Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "EnvironmentReadEvent"
+2026-02-02T07:08:20.6991887Z         }
+2026-02-02T07:08:20.6992386Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6993041Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationACI"
+2026-02-02T07:08:20.6993648Z         }
+2026-02-02T07:08:20.6994680Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6995421Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InferencingOperationAKS"
+2026-02-02T07:08:20.6996468Z         }
+2026-02-02T07:08:20.6997000Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6998064Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsActionEvent"
+2026-02-02T07:08:20.6998494Z         }
+2026-02-02T07:08:20.6998995Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.6999676Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsChangeEvent"
+2026-02-02T07:08:20.7000125Z         }
+2026-02-02T07:08:20.7000760Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7002153Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "ModelsReadEvent"
+2026-02-02T07:08:20.7002583Z         }
+2026-02-02T07:08:20.7003084Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7003731Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineChangeEvent"
+2026-02-02T07:08:20.7004163Z         }
+2026-02-02T07:08:20.7004625Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7005127Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "PipelineReadEvent"
+2026-02-02T07:08:20.7005534Z         }
+2026-02-02T07:08:20.7008866Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7009482Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunEvent"
+2026-02-02T07:08:20.7010032Z         }
+2026-02-02T07:08:20.7010618Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7011224Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RunReadEvent"
+2026-02-02T07:08:20.7011636Z         }
+2026-02-02T07:08:20.7011780Z 
+2026-02-02T07:08:20.7012221Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.7015287Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7016015Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.7016649Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.7016872Z 
+2026-02-02T07:08:20.7017410Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.7018544Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.7019261Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.7019715Z             }
+2026-02-02T07:08:20.7020065Z         }
+2026-02-02T07:08:20.7020309Z 
+2026-02-02T07:08:20.7020750Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7021110Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T07:08:20.7021920Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7022359Z         }
+2026-02-02T07:08:20.7022723Z     }
+2026-02-02T07:08:20.7022865Z 
+2026-02-02T07:08:20.7023675Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_blob"][0m will be created[0m[0m
+2026-02-02T07:08:20.7024583Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T07:08:20.7025289Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.7026068Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.7027313Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.7028113Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.7028822Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/blobServices/default"
+2026-02-02T07:08:20.7029093Z 
+2026-02-02T07:08:20.7029353Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7029675Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T07:08:20.7029902Z         }
+2026-02-02T07:08:20.7030302Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7030880Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T07:08:20.7031541Z         }
+2026-02-02T07:08:20.7032029Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7032663Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T07:08:20.7033129Z         }
+2026-02-02T07:08:20.7033277Z 
+2026-02-02T07:08:20.7033735Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.7034358Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7035073Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.7035741Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.7035946Z 
+2026-02-02T07:08:20.7036418Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.7037251Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.7037946Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.7038730Z             }
+2026-02-02T07:08:20.7039100Z         }
+2026-02-02T07:08:20.7039245Z 
+2026-02-02T07:08:20.7039733Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7040442Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T07:08:20.7040945Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7041299Z         }
+2026-02-02T07:08:20.7041661Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7042084Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T07:08:20.7042698Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7043087Z         }
+2026-02-02T07:08:20.7043403Z     }
+2026-02-02T07:08:20.7043551Z 
+2026-02-02T07:08:20.7044342Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_file"][0m will be created[0m[0m
+2026-02-02T07:08:20.7045235Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T07:08:20.7046002Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.7046783Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.7048125Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.7049428Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.7050687Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/fileServices/default"
+2026-02-02T07:08:20.7051150Z 
+2026-02-02T07:08:20.7051676Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7052204Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T07:08:20.7052604Z         }
+2026-02-02T07:08:20.7053090Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7053669Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T07:08:20.7054064Z         }
+2026-02-02T07:08:20.7054475Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7055038Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T07:08:20.7055468Z         }
+2026-02-02T07:08:20.7055611Z 
+2026-02-02T07:08:20.7056029Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.7056582Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7057193Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.7057804Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.7057993Z 
+2026-02-02T07:08:20.7058485Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.7059080Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.7060098Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.7060681Z             }
+2026-02-02T07:08:20.7060989Z         }
+2026-02-02T07:08:20.7061097Z 
+2026-02-02T07:08:20.7061474Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7061989Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T07:08:20.7062516Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7062921Z         }
+2026-02-02T07:08:20.7063394Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7064071Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T07:08:20.7064701Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7065123Z         }
+2026-02-02T07:08:20.7065449Z     }
+2026-02-02T07:08:20.7065589Z 
+2026-02-02T07:08:20.7066390Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_queue"][0m will be created[0m[0m
+2026-02-02T07:08:20.7067417Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T07:08:20.7068190Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.7076283Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.7077708Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.7078666Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.7079812Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/queueServices/default"
+2026-02-02T07:08:20.7080550Z 
+2026-02-02T07:08:20.7081025Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7081701Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T07:08:20.7082084Z         }
+2026-02-02T07:08:20.7082883Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7087059Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T07:08:20.7087514Z         }
+2026-02-02T07:08:20.7087972Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7088579Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T07:08:20.7088944Z         }
+2026-02-02T07:08:20.7089050Z 
+2026-02-02T07:08:20.7089468Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.7090062Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7090834Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.7091460Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.7091690Z 
+2026-02-02T07:08:20.7092156Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.7092730Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.7093188Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.7093467Z             }
+2026-02-02T07:08:20.7093655Z         }
+2026-02-02T07:08:20.7093777Z 
+2026-02-02T07:08:20.7094218Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7094720Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T07:08:20.7095935Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7096641Z         }
+2026-02-02T07:08:20.7097958Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7098499Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T07:08:20.7101721Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7102232Z         }
+2026-02-02T07:08:20.7102870Z     }
+2026-02-02T07:08:20.7103022Z 
+2026-02-02T07:08:20.7103835Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_table"][0m will be created[0m[0m
+2026-02-02T07:08:20.7104803Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T07:08:20.7105580Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T07:08:20.7106270Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T07:08:20.7107443Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T07:08:20.7108443Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T07:08:20.7109685Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/tableServices/default"
+2026-02-02T07:08:20.7110641Z 
+2026-02-02T07:08:20.7111183Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7111809Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T07:08:20.7112240Z         }
+2026-02-02T07:08:20.7112733Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7113418Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T07:08:20.7113839Z         }
+2026-02-02T07:08:20.7114335Z       [32m+[0m [0menabled_log {
+2026-02-02T07:08:20.7114951Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T07:08:20.7115367Z         }
+2026-02-02T07:08:20.7115514Z 
+2026-02-02T07:08:20.7115986Z       [32m+[0m [0mlog {
+2026-02-02T07:08:20.7116612Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7117210Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T07:08:20.7126808Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T07:08:20.7127159Z 
+2026-02-02T07:08:20.7127718Z           [32m+[0m [0mretention_policy {
+2026-02-02T07:08:20.7128355Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T07:08:20.7128924Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T07:08:20.7129314Z             }
+2026-02-02T07:08:20.7129676Z         }
+2026-02-02T07:08:20.7129851Z 
+2026-02-02T07:08:20.7130518Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7131099Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T07:08:20.7131694Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7132122Z         }
+2026-02-02T07:08:20.7133399Z       [32m+[0m [0mmetric {
+2026-02-02T07:08:20.7134041Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T07:08:20.7134671Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T07:08:20.7135045Z         }
+2026-02-02T07:08:20.7135342Z     }
+2026-02-02T07:08:20.7135484Z 
+2026-02-02T07:08:20.7136177Z [1m  # local_sensitive_file.az_sql_desired_state["app"][0m will be created[0m[0m
+2026-02-02T07:08:20.7136940Z [0m  [32m+[0m[0m resource "local_sensitive_file" "az_sql_desired_state" {
+2026-02-02T07:08:20.7137333Z       [32m+[0m [0m[1m[0mcontent[0m[0m              = (sensitive value)
+2026-02-02T07:08:20.7137700Z       [32m+[0m [0m[1m[0mcontent_base64sha256[0m[0m = (known after apply)
+2026-02-02T07:08:20.7138074Z       [32m+[0m [0m[1m[0mcontent_base64sha512[0m[0m = (known after apply)
+2026-02-02T07:08:20.7138439Z       [32m+[0m [0m[1m[0mcontent_md5[0m[0m          = (known after apply)
+2026-02-02T07:08:20.7138852Z       [32m+[0m [0m[1m[0mcontent_sha1[0m[0m         = (known after apply)
+2026-02-02T07:08:20.7139456Z       [32m+[0m [0m[1m[0mcontent_sha256[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7139836Z       [32m+[0m [0m[1m[0mcontent_sha512[0m[0m       = (known after apply)
+2026-02-02T07:08:20.7140328Z       [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0700"
+2026-02-02T07:08:20.7140757Z       [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0700"
+2026-02-02T07:08:20.7141107Z       [32m+[0m [0m[1m[0mfilename[0m[0m             = (known after apply)
+2026-02-02T07:08:20.7141458Z       [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+2026-02-02T07:08:20.7141681Z     }
+2026-02-02T07:08:20.7141754Z 
+2026-02-02T07:08:20.7142054Z [0m[1mPlan:[0m 15 to add, 0 to change, 0 to destroy.[0m
+2026-02-02T07:08:20.7142181Z 
+2026-02-02T07:08:20.7142433Z ------------------------------------------------------------------------
+2026-02-02T07:08:20.7142567Z 
+2026-02-02T07:08:20.7142797Z This plan was saved to: /tmp/sandbox_eus2_02.tfplan
+2026-02-02T07:08:20.7143074Z 
+2026-02-02T07:08:20.7143469Z To perform exactly these actions, run the following command to apply:
+2026-02-02T07:08:20.7143851Z     terraform apply "/tmp/sandbox_eus2_02.tfplan"
+2026-02-02T07:08:20.7143956Z 
+2026-02-02T07:08:20.7664625Z Terraform Plan Exit Code: 2
+2026-02-02T07:08:21.0123967Z 
+2026-02-02T07:08:21.0159963Z [command]/usr/local/bin/az account clear
+2026-02-02T07:08:21.7392334Z ##[section]Finishing: Terraform Plan
