@@ -1,0 +1,428 @@
+2026-02-02T14:05:13.9900928Z An execution plan has been generated and is shown below.
+2026-02-02T14:05:13.9901487Z Resource actions are indicated with the following symbols:
+2026-02-02T14:05:13.9902322Z   [32m+[0m create
+2026-02-02T14:05:13.9902824Z   [33m~[0m update in-place
+2026-02-02T14:05:13.9903251Z [0m
+2026-02-02T14:05:13.9903717Z Terraform will perform the following actions:
+2026-02-02T14:05:13.9903929Z 
+2026-02-02T14:05:14.0433582Z [1m  # azurerm_monitor_diagnostic_setting.env_to_evh["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.cognitiveservices_accounts_ai-foundry-eastus2"][0m will be updated in-place[0m[0m
+2026-02-02T14:05:14.0438121Z [0m  [33m~[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_evh" {
+2026-02-02T14:05:14.0439408Z         [1m[0mid[0m[0m                             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.CognitiveServices/accounts/ai-foundry-eastus2|to_event_hub"
+2026-02-02T14:05:14.0443001Z         [1m[0mname[0m[0m                           = "to_event_hub"
+2026-02-02T14:05:14.0443554Z         [90m# (3 unchanged attributes hidden)[0m[0m
+2026-02-02T14:05:14.0443743Z 
+2026-02-02T14:05:14.0444216Z       [31m-[0m [0menabled_log {
+2026-02-02T14:05:14.0444890Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "Audit" [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0445140Z 
+2026-02-02T14:05:14.0445666Z           [31m-[0m [0mretention_policy {
+2026-02-02T14:05:14.0446319Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0447270Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0447727Z             }
+2026-02-02T14:05:14.0448091Z         }
+2026-02-02T14:05:14.0448586Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0449255Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Audit"
+2026-02-02T14:05:14.0449728Z         }
+2026-02-02T14:05:14.0450206Z       [31m-[0m [0menabled_log {
+2026-02-02T14:05:14.0450933Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AzureOpenAIRequestUsage" [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0451243Z 
+2026-02-02T14:05:14.0451783Z           [31m-[0m [0mretention_policy {
+2026-02-02T14:05:14.0452472Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0456590Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0457542Z             }
+2026-02-02T14:05:14.0457880Z         }
+2026-02-02T14:05:14.0458319Z       [31m-[0m [0menabled_log {
+2026-02-02T14:05:14.0458960Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "RequestResponse" [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0459198Z 
+2026-02-02T14:05:14.0459706Z           [31m-[0m [0mretention_policy {
+2026-02-02T14:05:14.0460358Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0461085Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0461550Z             }
+2026-02-02T14:05:14.0461902Z         }
+2026-02-02T14:05:14.0462403Z       [31m-[0m [0menabled_log {
+2026-02-02T14:05:14.0463260Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "Trace" [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0463488Z 
+2026-02-02T14:05:14.0464453Z           [31m-[0m [0mretention_policy {
+2026-02-02T14:05:14.0465120Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0465822Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0466288Z             }
+2026-02-02T14:05:14.0466746Z         }
+2026-02-02T14:05:14.0466863Z 
+2026-02-02T14:05:14.0466982Z 
+2026-02-02T14:05:14.0467439Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0467999Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T14:05:14.0468606Z           [32m+[0m [0m[1m[0menabled[0m[0m  = false
+2026-02-02T14:05:14.0469000Z         }
+2026-02-02T14:05:14.0469465Z       [31m-[0m [0mmetric {
+2026-02-02T14:05:14.0470108Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AllMetrics" [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0470830Z           [31m-[0m [0m[1m[0menabled[0m[0m  = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0471039Z 
+2026-02-02T14:05:14.0471533Z           [31m-[0m [0mretention_policy {
+2026-02-02T14:05:14.0472205Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0472908Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-02T14:05:14.0473365Z             }
+2026-02-02T14:05:14.0473701Z         }
+2026-02-02T14:05:14.0475040Z         [90m# (4 unchanged blocks hidden)[0m[0m
+2026-02-02T14:05:14.0475769Z     }
+2026-02-02T14:05:14.0475914Z 
+2026-02-02T14:05:14.0477197Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.cognitiveservices_accounts_ai-foundry-eastus2"][0m will be created[0m[0m
+2026-02-02T14:05:14.0478230Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T14:05:14.0478955Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0479676Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0480994Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0481982Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0483523Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.CognitiveServices/accounts/ai-foundry-eastus2"
+2026-02-02T14:05:14.0483969Z 
+2026-02-02T14:05:14.0484477Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0485158Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AzureOpenAIRequestUsage"
+2026-02-02T14:05:14.0485725Z         }
+2026-02-02T14:05:14.0486238Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0487607Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RequestResponse"
+2026-02-02T14:05:14.0488053Z         }
+2026-02-02T14:05:14.0488545Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0489143Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Trace"
+2026-02-02T14:05:14.0489548Z         }
+2026-02-02T14:05:14.0489688Z 
+2026-02-02T14:05:14.0490171Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0490802Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0491544Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0504432Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0504685Z 
+2026-02-02T14:05:14.0505466Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0506120Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0506938Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0507371Z             }
+2026-02-02T14:05:14.0507734Z         }
+2026-02-02T14:05:14.0507898Z 
+2026-02-02T14:05:14.0508376Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0508972Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T14:05:14.0509593Z           [32m+[0m [0m[1m[0menabled[0m[0m  = false
+2026-02-02T14:05:14.0510004Z         }
+2026-02-02T14:05:14.0510360Z     }
+2026-02-02T14:05:14.0510503Z 
+2026-02-02T14:05:14.0511731Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-exos-home-scanner-sandbox_providers_microsoft.storage_storageaccounts_stexoshomescanneryo"][0m will be created[0m[0m
+2026-02-02T14:05:14.0512791Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T14:05:14.0518966Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0520110Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0521335Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0522293Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0523461Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo"
+2026-02-02T14:05:14.0523905Z 
+2026-02-02T14:05:14.0524411Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0524984Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0525724Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0525983Z 
+2026-02-02T14:05:14.0526495Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0527279Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0527975Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0528411Z             }
+2026-02-02T14:05:14.0528779Z         }
+2026-02-02T14:05:14.0528935Z 
+2026-02-02T14:05:14.0529410Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0530068Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0530769Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0531440Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0547365Z 
+2026-02-02T14:05:14.0548121Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0548783Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0549795Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0550243Z             }
+2026-02-02T14:05:14.0550601Z         }
+2026-02-02T14:05:14.0550740Z 
+2026-02-02T14:05:14.0551217Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0551812Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T14:05:14.0552428Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0552864Z         }
+2026-02-02T14:05:14.0553318Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0553919Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T14:05:14.0554546Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0554955Z         }
+2026-02-02T14:05:14.0555550Z     }
+2026-02-02T14:05:14.0555694Z 
+2026-02-02T14:05:14.0556977Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-exos-home-scanner-sandbox_providers_microsoft.web_serverfarms_plan-exos-home-scanner-api"][0m will be created[0m[0m
+2026-02-02T14:05:14.0558039Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T14:05:14.0558801Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0559548Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0560800Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0561749Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0568775Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Web/serverFarms/plan-exos-home-scanner-api"
+2026-02-02T14:05:14.0569326Z 
+2026-02-02T14:05:14.0569866Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0570455Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0571257Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0571524Z 
+2026-02-02T14:05:14.0571994Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0572448Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0572998Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0573371Z             }
+2026-02-02T14:05:14.0573668Z         }
+2026-02-02T14:05:14.0573815Z 
+2026-02-02T14:05:14.0574319Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0574996Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0575597Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0576224Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0576460Z 
+2026-02-02T14:05:14.0577064Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0577703Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0578338Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0578782Z             }
+2026-02-02T14:05:14.0579134Z         }
+2026-02-02T14:05:14.0579282Z 
+2026-02-02T14:05:14.0579759Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0580357Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-02T14:05:14.0580974Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0581398Z         }
+2026-02-02T14:05:14.0581757Z     }
+2026-02-02T14:05:14.0581898Z 
+2026-02-02T14:05:14.0583204Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-sandbox-eduardo_providers_microsoft.sql_servers_sqlserver-eduardo-free-server_databases_db-exos-home-scanner"][0m will be created[0m[0m
+2026-02-02T14:05:14.0584443Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-02T14:05:14.0585211Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0586141Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0587459Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0588615Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0589908Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-sandbox-eduardo/providers/Microsoft.Sql/servers/sqlserver-eduardo-free-server/databases/db-exos-home-scanner"
+2026-02-02T14:05:14.0590480Z 
+2026-02-02T14:05:14.0590962Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0591580Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AutomaticTuning"
+2026-02-02T14:05:14.0591969Z         }
+2026-02-02T14:05:14.0592234Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0592719Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Blocks"
+2026-02-02T14:05:14.0593065Z         }
+2026-02-02T14:05:14.0593526Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0598333Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DatabaseWaitStatistics"
+2026-02-02T14:05:14.0598858Z         }
+2026-02-02T14:05:14.0600319Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0600851Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Deadlocks"
+2026-02-02T14:05:14.0601239Z         }
+2026-02-02T14:05:14.0601761Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0602402Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "DevOpsOperationsAudit"
+2026-02-02T14:05:14.0602866Z         }
+2026-02-02T14:05:14.0603356Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0603799Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Errors"
+2026-02-02T14:05:14.0609665Z         }
+2026-02-02T14:05:14.0611670Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0612893Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "QueryStoreRuntimeStatistics"
+2026-02-02T14:05:14.0613445Z         }
+2026-02-02T14:05:14.0613946Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0615729Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "QueryStoreWaitStatistics"
+2026-02-02T14:05:14.0616215Z         }
+2026-02-02T14:05:14.0616849Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0617465Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "SQLInsights"
+2026-02-02T14:05:14.0617885Z         }
+2026-02-02T14:05:14.0618385Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0619049Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "SQLSecurityAuditEvents"
+2026-02-02T14:05:14.0619516Z         }
+2026-02-02T14:05:14.0620011Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0620613Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Timeouts"
+2026-02-02T14:05:14.0621036Z         }
+2026-02-02T14:05:14.0621178Z 
+2026-02-02T14:05:14.0621636Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0622273Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0622971Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0623661Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0623902Z 
+2026-02-02T14:05:14.0624415Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0625113Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0625771Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0626425Z             }
+2026-02-02T14:05:14.0626887Z         }
+2026-02-02T14:05:14.0627042Z 
+2026-02-02T14:05:14.0627548Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0628128Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Basic"
+2026-02-02T14:05:14.0628735Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0629143Z         }
+2026-02-02T14:05:14.0629549Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0630136Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "InstanceAndAppAdvanced"
+2026-02-02T14:05:14.0630777Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0631174Z         }
+2026-02-02T14:05:14.0631621Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0632418Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "WorkloadManagement"
+2026-02-02T14:05:14.0633033Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0633309Z         }
+2026-02-02T14:05:14.0633496Z     }
+2026-02-02T14:05:14.0633581Z 
+2026-02-02T14:05:14.0633991Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_blob"][0m will be created[0m[0m
+2026-02-02T14:05:14.0634484Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T14:05:14.0634869Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0635390Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0636459Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0637837Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0639503Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/blobServices/default"
+2026-02-02T14:05:14.0641707Z 
+2026-02-02T14:05:14.0642923Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0643781Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T14:05:14.0644213Z         }
+2026-02-02T14:05:14.0644732Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0645390Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T14:05:14.0645825Z         }
+2026-02-02T14:05:14.0646283Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0647033Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T14:05:14.0647444Z         }
+2026-02-02T14:05:14.0647596Z 
+2026-02-02T14:05:14.0648047Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0648709Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0649405Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0650680Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0650881Z 
+2026-02-02T14:05:14.0651675Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0652490Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0653256Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0653517Z             }
+2026-02-02T14:05:14.0653702Z         }
+2026-02-02T14:05:14.0653787Z 
+2026-02-02T14:05:14.0654038Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0654393Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T14:05:14.0678424Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0678917Z         }
+2026-02-02T14:05:14.0679374Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0680187Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T14:05:14.0680746Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0681132Z         }
+2026-02-02T14:05:14.0681454Z     }
+2026-02-02T14:05:14.0681606Z 
+2026-02-02T14:05:14.0693617Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_file"][0m will be created[0m[0m
+2026-02-02T14:05:14.0694427Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T14:05:14.0695200Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0695898Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0697596Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0698618Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0699792Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/fileServices/default"
+2026-02-02T14:05:14.0700154Z 
+2026-02-02T14:05:14.0700469Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0701054Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T14:05:14.0701476Z         }
+2026-02-02T14:05:14.0701961Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0702494Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T14:05:14.0702888Z         }
+2026-02-02T14:05:14.0703232Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0703746Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T14:05:14.0704123Z         }
+2026-02-02T14:05:14.0704249Z 
+2026-02-02T14:05:14.0704696Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0705252Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0705968Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0706748Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0706977Z 
+2026-02-02T14:05:14.0708073Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0708714Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0709389Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0709830Z             }
+2026-02-02T14:05:14.0710207Z         }
+2026-02-02T14:05:14.0710339Z 
+2026-02-02T14:05:14.0710722Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0711286Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T14:05:14.0711832Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0712245Z         }
+2026-02-02T14:05:14.0712809Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0713439Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T14:05:14.0714021Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0714423Z         }
+2026-02-02T14:05:14.0714804Z     }
+2026-02-02T14:05:14.0714939Z 
+2026-02-02T14:05:14.0715649Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_queue"][0m will be created[0m[0m
+2026-02-02T14:05:14.0716588Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T14:05:14.0717291Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0717857Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0719109Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0720375Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0723597Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/queueServices/default"
+2026-02-02T14:05:14.0724090Z 
+2026-02-02T14:05:14.0724426Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0730291Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T14:05:14.0731720Z         }
+2026-02-02T14:05:14.0732331Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0732950Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T14:05:14.0733364Z         }
+2026-02-02T14:05:14.0733855Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0734466Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T14:05:14.0734884Z         }
+2026-02-02T14:05:14.0735028Z 
+2026-02-02T14:05:14.0735501Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0736138Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0737021Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0737723Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0737908Z 
+2026-02-02T14:05:14.0738417Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0743032Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0743846Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0744237Z             }
+2026-02-02T14:05:14.0744542Z         }
+2026-02-02T14:05:14.0744670Z 
+2026-02-02T14:05:14.0745070Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0745568Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T14:05:14.0746461Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0747097Z         }
+2026-02-02T14:05:14.0747606Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0748126Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T14:05:14.0748656Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0749038Z         }
+2026-02-02T14:05:14.0749349Z     }
+2026-02-02T14:05:14.0749508Z 
+2026-02-02T14:05:14.0750296Z [1m  # azurerm_monitor_diagnostic_setting.storage_account_sub_to_loga["stexoshomescanneryo_table"][0m will be created[0m[0m
+2026-02-02T14:05:14.0751244Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "storage_account_sub_to_loga" {
+2026-02-02T14:05:14.0752006Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-02T14:05:14.0752736Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-02T14:05:14.0753986Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-02T14:05:14.0754963Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-02T14:05:14.0756438Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-exos-home-scanner-sandbox/providers/Microsoft.Storage/storageAccounts/stexoshomescanneryo/tableServices/default"
+2026-02-02T14:05:14.0760695Z 
+2026-02-02T14:05:14.0761440Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0762097Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageDelete"
+2026-02-02T14:05:14.0762753Z         }
+2026-02-02T14:05:14.0763316Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0763973Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageRead"
+2026-02-02T14:05:14.0764363Z         }
+2026-02-02T14:05:14.0764748Z       [32m+[0m [0menabled_log {
+2026-02-02T14:05:14.0765381Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "StorageWrite"
+2026-02-02T14:05:14.0765618Z         }
+2026-02-02T14:05:14.0765738Z 
+2026-02-02T14:05:14.0766166Z       [32m+[0m [0mlog {
+2026-02-02T14:05:14.0766863Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0767562Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-02T14:05:14.0768254Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-02T14:05:14.0768698Z 
+2026-02-02T14:05:14.0769221Z           [32m+[0m [0mretention_policy {
+2026-02-02T14:05:14.0769881Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-02T14:05:14.0770583Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-02T14:05:14.0771008Z             }
+2026-02-02T14:05:14.0771341Z         }
+2026-02-02T14:05:14.0771519Z 
+2026-02-02T14:05:14.0771988Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0772615Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Capacity"
+2026-02-02T14:05:14.0773752Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0774251Z         }
+2026-02-02T14:05:14.0774768Z       [32m+[0m [0mmetric {
+2026-02-02T14:05:14.0775451Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Transaction"
+2026-02-02T14:05:14.0776111Z           [32m+[0m [0m[1m[0menabled[0m[0m  = true
+2026-02-02T14:05:14.0776474Z         }
+2026-02-02T14:05:14.0776971Z     }
+2026-02-02T14:05:14.0777122Z 
+2026-02-02T14:05:14.0777770Z [1m  # local_sensitive_file.az_sql_desired_state["app"][0m will be created[0m[0m
+2026-02-02T14:05:14.0778871Z [0m  [32m+[0m[0m resource "local_sensitive_file" "az_sql_desired_state" {
+2026-02-02T14:05:14.0779650Z       [32m+[0m [0m[1m[0mcontent[0m[0m              = (sensitive value)
+2026-02-02T14:05:14.0780577Z       [32m+[0m [0m[1m[0mcontent_base64sha256[0m[0m = (known after apply)
+2026-02-02T14:05:14.0781546Z       [32m+[0m [0m[1m[0mcontent_base64sha512[0m[0m = (known after apply)
+2026-02-02T14:05:14.0782860Z       [32m+[0m [0m[1m[0mcontent_md5[0m[0m          = (known after apply)
+2026-02-02T14:05:14.0784416Z       [32m+[0m [0m[1m[0mcontent_sha1[0m[0m         = (known after apply)
+2026-02-02T14:05:14.0785550Z       [32m+[0m [0m[1m[0mcontent_sha256[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0786978Z       [32m+[0m [0m[1m[0mcontent_sha512[0m[0m       = (known after apply)
+2026-02-02T14:05:14.0787733Z       [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0700"
+2026-02-02T14:05:14.0788472Z       [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0700"
+2026-02-02T14:05:14.0789212Z       [32m+[0m [0m[1m[0mfilename[0m[0m             = (known after apply)
+2026-02-02T14:05:14.0790986Z       [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+2026-02-02T14:05:14.0791356Z     }
+2026-02-02T14:05:14.0791484Z 
+2026-02-02T14:05:14.0792051Z [0m[1mPlan:[0m 9 to add, 1 to change, 0 to destroy.[0m
+2026-02-02T14:05:14.0792271Z 
+2026-02-02T14:05:14.0792619Z ------------------------------------------------------------------------
+2026-02-02T14:05:14.0792750Z 
+2026-02-02T14:05:14.0799444Z This plan was saved to: /tmp/sandbox_eus2_02.tfplan
+2026-02-02T14:05:14.0800051Z 
+2026-02-02T14:05:14.0800655Z To perform exactly these actions, run the following command to apply:
+2026-02-02T14:05:14.0801257Z     terraform apply "/tmp/sandbox_eus2_02.tfplan"
+2026-02-02T14:05:14.0801446Z 
+2026-02-02T14:05:14.1333027Z Terraform Plan Exit Code: 2
+2026-02-02T14:05:14.1910360Z gpg: directory '/home/AzDevOps/.gnupg' created
+2026-02-02T14:05:14.1911002Z gpg: keybox '/home/AzDevOps/.gnupg/pubring.kbx' created
+2026-02-02T14:05:15.1372323Z 
+2026-02-02T14:05:15.1412064Z [command]/usr/local/bin/az account clear
+2026-02-02T14:05:15.7632736Z ##[section]Finishing: Terraform Plan
