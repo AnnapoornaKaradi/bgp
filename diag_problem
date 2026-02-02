@@ -1,0 +1,5 @@
+Update the diagnostic settings for the AI Foundry (ai-foundry-eastus2) resource so that all log categories except Audit Logs are sent to the Log Analytics Workspace: log-app-common-eus2-01.
+
+Audit Logs should continue being streamed to the existing Event Hub, preserving the current configuration.
+
+This change is required to centralize operational logs for observability while maintaining compliance‑driven separation of audit data.
