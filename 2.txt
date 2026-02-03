@@ -1,24 +1,22 @@
-2026-02-03T14:22:35.0739281Z 
-2026-02-03T14:22:35.0740264Z If you ever set or change modules or backend configuration for Terraform,
-2026-02-03T14:22:35.0740812Z rerun this command to reinitialize your working directory. If you forget, other
-2026-02-03T14:22:35.0741270Z commands will detect it and remind you to do so if necessary.[0m
-2026-02-03T14:22:43.0205403Z [31m
-2026-02-03T14:22:43.0206391Z [1m[31mError: [0m[0m[1mReference to undeclared resource[0m
-2026-02-03T14:22:43.0206588Z 
-2026-02-03T14:22:43.0207105Z [0m  on diag_logging.tf line 21, in locals:
-2026-02-03T14:22:43.0207922Z   21: 					is_audit_to_evh = contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), [4mresource.name[0m)
-2026-02-03T14:22:43.0208202Z [0m
-2026-02-03T14:22:43.0208418Z A managed resource "resource" "name" has not been declared in the root module.
-2026-02-03T14:22:43.0208660Z [0m[0m
-2026-02-03T14:22:43.0263451Z [31m
-2026-02-03T14:22:43.0267443Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-03T14:22:43.0267658Z 
-2026-02-03T14:22:43.0268054Z [0m  on diag_logging.tf line 25, in locals:
-2026-02-03T14:22:43.0274279Z   25: 					logs_loga_targets = [4mis_audit_to_evh[0m ? [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-2026-02-03T14:22:43.0274880Z [0m
-2026-02-03T14:22:43.0275226Z A reference to a resource type must be followed by at least one attribute
-2026-02-03T14:22:43.0275605Z access, specifying the resource name.
-2026-02-03T14:22:43.0275953Z [0m[0m
-2026-02-03T14:22:43.0428243Z Terraform Plan Exit Code: 1
-2026-02-03T14:22:43.0443256Z 
-2026-02-03T14:22:43.0487221Z ##[error]Script failed with exit code: 1
+2026-02-03T14:28:54.4510080Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-03T14:28:54.4510276Z 
+2026-02-03T14:28:54.4510801Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-03T14:28:54.4511634Z   25: 					logs_loga_targets = [4mis_audit_to_evh[0m ? [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
+2026-02-03T14:28:54.4512305Z [0m
+2026-02-03T14:28:54.4512747Z A reference to a resource type must be followed by at least one attribute
+2026-02-03T14:28:54.4513256Z access, specifying the resource name.
+2026-02-03T14:28:54.4513699Z [0m[0m
+2026-02-03T14:28:54.4587352Z [31m
+2026-02-03T14:28:54.4588186Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-03T14:28:54.4588504Z 
+2026-02-03T14:28:54.4589170Z [0m  on diag_logging.tf line 37, in locals:
+2026-02-03T14:28:54.4590020Z   37: 					logs_evh_targets = [4mis_audit_to_evh[0m ? [ "Audit"] : [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v 
+2026-02-03T14:28:54.4590713Z [0m
+2026-02-03T14:28:54.4591155Z A reference to a resource type must be followed by at least one attribute
+2026-02-03T14:28:54.4591707Z access, specifying the resource name.
+2026-02-03T14:28:54.4592235Z [0m[0m
+2026-02-03T14:28:54.4683504Z Terraform Plan Exit Code: 1
+2026-02-03T14:28:54.4705020Z 
+2026-02-03T14:28:54.4759890Z ##[error]Script failed with exit code: 1
+2026-02-03T14:28:54.4780632Z [command]/usr/local/bin/az account clear
+2026-02-03T14:28:55.1418211Z ##[section]Finishing: Terraform Plan
