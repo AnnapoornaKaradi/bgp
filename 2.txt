@@ -1,0 +1,318 @@
+2026-02-03T13:42:11.5680339Z 
+2026-02-03T13:42:11.5685210Z An execution plan has been generated and is shown below.
+2026-02-03T13:42:11.5685914Z Resource actions are indicated with the following symbols:
+2026-02-03T13:42:11.5686849Z   [32m+[0m create
+2026-02-03T13:42:11.5687437Z   [33m~[0m update in-place
+2026-02-03T13:42:11.5687955Z [0m
+2026-02-03T13:42:11.5688457Z Terraform will perform the following actions:
+2026-02-03T13:42:11.5688722Z 
+2026-02-03T13:42:11.6314769Z [1m  # azurerm_monitor_diagnostic_setting.env_to_evh["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.cognitiveservices_accounts_ai-foundry-eastus2"][0m will be updated in-place[0m[0m
+2026-02-03T13:42:11.6318221Z [0m  [33m~[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_evh" {
+2026-02-03T13:42:11.6319799Z         [1m[0mid[0m[0m                             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.CognitiveServices/accounts/ai-foundry-eastus2|to_event_hub"
+2026-02-03T13:42:11.6320828Z         [1m[0mname[0m[0m                           = "to_event_hub"
+2026-02-03T13:42:11.6322503Z         [90m# (3 unchanged attributes hidden)[0m[0m
+2026-02-03T13:42:11.6322917Z 
+2026-02-03T13:42:11.6323512Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6324284Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "Audit" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6324736Z 
+2026-02-03T13:42:11.6325957Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6326847Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6330641Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6331189Z             }
+2026-02-03T13:42:11.6331604Z         }
+2026-02-03T13:42:11.6332186Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.6332912Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Audit"
+2026-02-03T13:42:11.6333413Z         }
+2026-02-03T13:42:11.6333980Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6334853Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AzureOpenAIRequestUsage" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6335153Z 
+2026-02-03T13:42:11.6335743Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6336558Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6337416Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6337948Z             }
+2026-02-03T13:42:11.6338370Z         }
+2026-02-03T13:42:11.6338959Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6340011Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "RequestResponse" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6340307Z 
+2026-02-03T13:42:11.6341542Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6342340Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6343199Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6343751Z             }
+2026-02-03T13:42:11.6344168Z         }
+2026-02-03T13:42:11.6344752Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6345537Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "Trace" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6345797Z 
+2026-02-03T13:42:11.6346399Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6347256Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 0 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6348115Z               [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6348657Z             }
+2026-02-03T13:42:11.6349231Z         }
+2026-02-03T13:42:11.6349515Z 
+2026-02-03T13:42:11.6349666Z 
+2026-02-03T13:42:11.6350635Z         [90m# (5 unchanged blocks hidden)[0m[0m
+2026-02-03T13:42:11.6351118Z     }
+2026-02-03T13:42:11.6351298Z 
+2026-02-03T13:42:11.6905437Z [1m  # azurerm_monitor_diagnostic_setting.env_to_evh["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_rg-net-sandbox-eus2-01_providers_microsoft.network_azurefirewalls_frw-backhaul-sandbox-eus2-01"][0m will be updated in-place[0m[0m
+2026-02-03T13:42:11.6907882Z [0m  [33m~[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_evh" {
+2026-02-03T13:42:11.6909373Z         [1m[0mid[0m[0m                             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/rg-net-sandbox-eus2-01/providers/Microsoft.Network/azureFirewalls/frw-backhaul-sandbox-eus2-01|to_event_hub"
+2026-02-03T13:42:11.6910451Z         [1m[0mname[0m[0m                           = "to_event_hub"
+2026-02-03T13:42:11.6941023Z         [90m# (4 unchanged attributes hidden)[0m[0m
+2026-02-03T13:42:11.6941342Z 
+2026-02-03T13:42:11.6941834Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6942728Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWApplicationRule" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6943036Z 
+2026-02-03T13:42:11.6943634Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6944900Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6945938Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6946409Z             }
+2026-02-03T13:42:11.6946772Z         }
+2026-02-03T13:42:11.6947334Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.6948072Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWApplicationRule"
+2026-02-03T13:42:11.6948609Z         }
+2026-02-03T13:42:11.6949185Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6951261Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWApplicationRuleAggregation" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6951611Z 
+2026-02-03T13:42:11.6952208Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6953198Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6953950Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6959441Z             }
+2026-02-03T13:42:11.6962255Z         }
+2026-02-03T13:42:11.6982054Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.6988169Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWApplicationRuleAggregation"
+2026-02-03T13:42:11.6990264Z         }
+2026-02-03T13:42:11.6990853Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.6992297Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWDnsAdditional"
+2026-02-03T13:42:11.6992810Z         }
+2026-02-03T13:42:11.6993227Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.6993911Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWDnsQuery" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6994537Z 
+2026-02-03T13:42:11.6995043Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.6995713Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6996487Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.6996983Z             }
+2026-02-03T13:42:11.6997351Z         }
+2026-02-03T13:42:11.6997898Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.6998497Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWDnsQuery"
+2026-02-03T13:42:11.6998952Z         }
+2026-02-03T13:42:11.6999687Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7000525Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWFatFlow" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7000834Z 
+2026-02-03T13:42:11.7001447Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7002297Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7003373Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7003801Z             }
+2026-02-03T13:42:11.7004118Z         }
+2026-02-03T13:42:11.7004607Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7011201Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWFatFlow"
+2026-02-03T13:42:11.7013411Z         }
+2026-02-03T13:42:11.7014199Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7014823Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWFlowTrace" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7014986Z 
+2026-02-03T13:42:11.7015291Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7015814Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7016244Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7016598Z             }
+2026-02-03T13:42:11.7016814Z         }
+2026-02-03T13:42:11.7020612Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7029402Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWFlowTrace"
+2026-02-03T13:42:11.7029912Z         }
+2026-02-03T13:42:11.7030456Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7031217Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWFqdnResolveFailure" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7031544Z 
+2026-02-03T13:42:11.7032167Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7032963Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7033817Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7034350Z             }
+2026-02-03T13:42:11.7034773Z         }
+2026-02-03T13:42:11.7035357Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7041158Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWFqdnResolveFailure"
+2026-02-03T13:42:11.7042088Z         }
+2026-02-03T13:42:11.7042557Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7043413Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWIdpsSignature" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7043741Z 
+2026-02-03T13:42:11.7044385Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7044992Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7045679Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7046139Z             }
+2026-02-03T13:42:11.7046528Z         }
+2026-02-03T13:42:11.7047119Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7047650Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWIdpsSignature"
+2026-02-03T13:42:11.7048107Z         }
+2026-02-03T13:42:11.7048638Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7050330Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWNatRule" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7050601Z 
+2026-02-03T13:42:11.7051164Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7051900Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7052557Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7053006Z             }
+2026-02-03T13:42:11.7053373Z         }
+2026-02-03T13:42:11.7053890Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7054498Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWNatRule"
+2026-02-03T13:42:11.7054890Z         }
+2026-02-03T13:42:11.7055390Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7056141Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWNatRuleAggregation" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7056299Z 
+2026-02-03T13:42:11.7056609Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7057542Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7058365Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7058655Z             }
+2026-02-03T13:42:11.7058861Z         }
+2026-02-03T13:42:11.7059428Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7060090Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWNatRuleAggregation"
+2026-02-03T13:42:11.7060370Z         }
+2026-02-03T13:42:11.7060926Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7061715Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWNetworkRule" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7061972Z 
+2026-02-03T13:42:11.7062637Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7063356Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7064095Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7064584Z             }
+2026-02-03T13:42:11.7064972Z         }
+2026-02-03T13:42:11.7065357Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7065981Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWNetworkRule"
+2026-02-03T13:42:11.7066451Z         }
+2026-02-03T13:42:11.7067006Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7067549Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWNetworkRuleAggregation" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7067751Z 
+2026-02-03T13:42:11.7068290Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7069738Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7070806Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7071352Z             }
+2026-02-03T13:42:11.7071963Z         }
+2026-02-03T13:42:11.7072721Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7073622Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWNetworkRuleAggregation"
+2026-02-03T13:42:11.7074227Z         }
+2026-02-03T13:42:11.7074801Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7075744Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AZFWThreatIntel" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7076130Z 
+2026-02-03T13:42:11.7077081Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7077825Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7078667Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7079700Z             }
+2026-02-03T13:42:11.7080076Z         }
+2026-02-03T13:42:11.7080644Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7082300Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AZFWThreatIntel"
+2026-02-03T13:42:11.7082862Z         }
+2026-02-03T13:42:11.7083588Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7087232Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallApplicationRule" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7087625Z 
+2026-02-03T13:42:11.7088248Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7089056Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7094749Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7095583Z             }
+2026-02-03T13:42:11.7096890Z         }
+2026-02-03T13:42:11.7097819Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7098630Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallApplicationRule"
+2026-02-03T13:42:11.7099170Z         }
+2026-02-03T13:42:11.7099924Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7100831Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallDnsProxy" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7101511Z 
+2026-02-03T13:42:11.7102199Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7102984Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7103882Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7104329Z             }
+2026-02-03T13:42:11.7104570Z         }
+2026-02-03T13:42:11.7104882Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7105625Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallDnsProxy"
+2026-02-03T13:42:11.7106104Z         }
+2026-02-03T13:42:11.7106628Z       [31m-[0m [0menabled_log {
+2026-02-03T13:42:11.7111145Z           [31m-[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallNetworkRule" [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7111631Z 
+2026-02-03T13:42:11.7112473Z           [31m-[0m [0mretention_policy {
+2026-02-03T13:42:11.7113279Z               [31m-[0m [0m[1m[0mdays[0m[0m    = 90 [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7122774Z               [31m-[0m [0m[1m[0menabled[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+2026-02-03T13:42:11.7123493Z             }
+2026-02-03T13:42:11.7123919Z         }
+2026-02-03T13:42:11.7124463Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7125152Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AzureFirewallNetworkRule"
+2026-02-03T13:42:11.7125561Z         }
+2026-02-03T13:42:11.7125727Z 
+2026-02-03T13:42:11.7125885Z 
+2026-02-03T13:42:11.7130553Z         [90m# (17 unchanged blocks hidden)[0m[0m
+2026-02-03T13:42:11.7130994Z     }
+2026-02-03T13:42:11.7131154Z 
+2026-02-03T13:42:11.7132146Z [1m  # azurerm_monitor_diagnostic_setting.env_to_loga["_subscriptions_8d1a8329-ea90-46a3-b900-8676c42ed761_resourcegroups_datascience_group_providers_microsoft.cognitiveservices_accounts_ai-foundry-eastus2"][0m will be created[0m[0m
+2026-02-03T13:42:11.7133227Z [0m  [32m+[0m[0m resource "azurerm_monitor_diagnostic_setting" "env_to_loga" {
+2026-02-03T13:42:11.7134024Z       [32m+[0m [0m[1m[0mid[0m[0m                             = (known after apply)
+2026-02-03T13:42:11.7134793Z       [32m+[0m [0m[1m[0mlog_analytics_destination_type[0m[0m = (known after apply)
+2026-02-03T13:42:11.7136269Z       [32m+[0m [0m[1m[0mlog_analytics_workspace_id[0m[0m     = "/subscriptions/a2ca26b7-774e-4207-801a-c45151ff310d/resourceGroups/rg-log-common-eus2-01/providers/Microsoft.OperationalInsights/workspaces/log-app-common-eus2-01"
+2026-02-03T13:42:11.7137360Z       [32m+[0m [0m[1m[0mname[0m[0m                           = "to_log_analytics"
+2026-02-03T13:42:11.7138672Z       [32m+[0m [0m[1m[0mtarget_resource_id[0m[0m             = "/subscriptions/8d1a8329-ea90-46a3-b900-8676c42ed761/resourceGroups/Datascience_group/providers/Microsoft.CognitiveServices/accounts/ai-foundry-eastus2"
+2026-02-03T13:42:11.7139202Z 
+2026-02-03T13:42:11.7140108Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7145846Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AzureOpenAIRequestUsage"
+2026-02-03T13:42:11.7146995Z         }
+2026-02-03T13:42:11.7148144Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7148898Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "RequestResponse"
+2026-02-03T13:42:11.7149575Z         }
+2026-02-03T13:42:11.7150691Z       [32m+[0m [0menabled_log {
+2026-02-03T13:42:11.7156403Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "Trace"
+2026-02-03T13:42:11.7156975Z         }
+2026-02-03T13:42:11.7157178Z 
+2026-02-03T13:42:11.7157724Z       [32m+[0m [0mlog {
+2026-02-03T13:42:11.7158376Z           [32m+[0m [0m[1m[0mcategory[0m[0m       = (known after apply)
+2026-02-03T13:42:11.7159496Z           [32m+[0m [0m[1m[0mcategory_group[0m[0m = (known after apply)
+2026-02-03T13:42:11.7160424Z           [32m+[0m [0m[1m[0menabled[0m[0m        = (known after apply)
+2026-02-03T13:42:11.7160805Z 
+2026-02-03T13:42:11.7161453Z           [32m+[0m [0mretention_policy {
+2026-02-03T13:42:11.7162333Z               [32m+[0m [0m[1m[0mdays[0m[0m    = (known after apply)
+2026-02-03T13:42:11.7163825Z               [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+2026-02-03T13:42:11.7164928Z             }
+2026-02-03T13:42:11.7165698Z         }
+2026-02-03T13:42:11.7166025Z 
+2026-02-03T13:42:11.7176170Z       [32m+[0m [0mmetric {
+2026-02-03T13:42:11.7177387Z           [32m+[0m [0m[1m[0mcategory[0m[0m = "AllMetrics"
+2026-02-03T13:42:11.7178014Z           [32m+[0m [0m[1m[0menabled[0m[0m  = false
+2026-02-03T13:42:11.7178703Z         }
+2026-02-03T13:42:11.7179100Z     }
+2026-02-03T13:42:11.7179430Z 
+2026-02-03T13:42:11.7180162Z [1m  # local_sensitive_file.az_sql_desired_state["app"][0m will be created[0m[0m
+2026-02-03T13:42:11.7180646Z [0m  [32m+[0m[0m resource "local_sensitive_file" "az_sql_desired_state" {
+2026-02-03T13:42:11.7181080Z       [32m+[0m [0m[1m[0mcontent[0m[0m              = (sensitive value)
+2026-02-03T13:42:11.7181520Z       [32m+[0m [0m[1m[0mcontent_base64sha256[0m[0m = (known after apply)
+2026-02-03T13:42:11.7182209Z       [32m+[0m [0m[1m[0mcontent_base64sha512[0m[0m = (known after apply)
+2026-02-03T13:42:11.7182862Z       [32m+[0m [0m[1m[0mcontent_md5[0m[0m          = (known after apply)
+2026-02-03T13:42:11.7183689Z       [32m+[0m [0m[1m[0mcontent_sha1[0m[0m         = (known after apply)
+2026-02-03T13:42:11.7184643Z       [32m+[0m [0m[1m[0mcontent_sha256[0m[0m       = (known after apply)
+2026-02-03T13:42:11.7185320Z       [32m+[0m [0m[1m[0mcontent_sha512[0m[0m       = (known after apply)
+2026-02-03T13:42:11.7185903Z       [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0700"
+2026-02-03T13:42:11.7186303Z       [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0700"
+2026-02-03T13:42:11.7186712Z       [32m+[0m [0m[1m[0mfilename[0m[0m             = (known after apply)
+2026-02-03T13:42:11.7187333Z       [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+2026-02-03T13:42:11.7187793Z     }
+2026-02-03T13:42:11.7187962Z 
+2026-02-03T13:42:11.7188370Z [0m[1mPlan:[0m 2 to add, 2 to change, 0 to destroy.[0m
+2026-02-03T13:42:11.7188664Z [0m
+2026-02-03T13:42:11.7188963Z [1mChanges to Outputs:[0m
+2026-02-03T13:42:11.7189601Z   [32m+[0m [0m[1m[0mai_foundry_eastus2_logs_evh_targets[0m[0m     = [
+2026-02-03T13:42:11.7190038Z       [32m+[0m [0m[
+2026-02-03T13:42:11.7190479Z           [32m+[0m [0m"Audit",
+2026-02-03T13:42:11.7190749Z         ],
+2026-02-03T13:42:11.7190971Z     ]
+2026-02-03T13:42:11.7191351Z   [32m+[0m [0m[1m[0mai_foundry_eastus2_logs_loga_targets[0m[0m    = [
+2026-02-03T13:42:11.7191682Z       [32m+[0m [0m[
+2026-02-03T13:42:11.7192034Z           [32m+[0m [0m"AzureOpenAIRequestUsage",
+2026-02-03T13:42:11.7192382Z           [32m+[0m [0m"RequestResponse",
+2026-02-03T13:42:11.7193293Z           [32m+[0m [0m"Trace",
+2026-02-03T13:42:11.7193562Z         ],
+2026-02-03T13:42:11.7193784Z     ]
+2026-02-03T13:42:11.7194510Z   [32m+[0m [0m[1m[0mai_foundry_eastus2_metrics_evh_targets[0m[0m  = [
+2026-02-03T13:42:11.7194847Z       [32m+[0m [0m[
+2026-02-03T13:42:11.7195161Z           [32m+[0m [0m"AllMetrics",
+2026-02-03T13:42:11.7195400Z         ],
+2026-02-03T13:42:11.7195616Z     ]
+2026-02-03T13:42:11.7195992Z   [32m+[0m [0m[1m[0mai_foundry_eastus2_metrics_loga_targets[0m[0m = [
+2026-02-03T13:42:11.7196328Z       [32m+[0m [0m[],
+2026-02-03T13:42:11.7196559Z     ][0m
+2026-02-03T13:42:11.7196646Z 
+2026-02-03T13:42:11.7196941Z ------------------------------------------------------------------------
+2026-02-03T13:42:11.7197109Z 
+2026-02-03T13:42:11.7197378Z This plan was saved to: /tmp/sandbox_eus2_02.tfplan
+2026-02-03T13:42:11.7197507Z 
+2026-02-03T13:42:11.7197850Z To perform exactly these actions, run the following command to apply:
+2026-02-03T13:42:11.7198390Z     terraform apply "/tmp/sandbox_eus2_02.tfplan"
+2026-02-03T13:42:11.7198612Z 
+2026-02-03T13:42:11.8339891Z Terraform Plan Exit Code: 2
+2026-02-03T13:42:12.1773207Z 
+2026-02-03T13:42:12.1814286Z [command]/usr/local/bin/az account clear
+2026-02-03T13:42:13.0062654Z ##[section]Finishing: Terraform Plan
