@@ -1,31 +1,65 @@
-
-
-  on diag_logging.tf line 38, in locals:
-  38: 						if is_cognitive_override 
-
-A reference to a resource type must be followed by at least one attribute
-access, specifying the resource name.
-
-
-Error: Invalid reference
-
-  on diag_logging.tf line 45, in locals:
-  45: 							is_cognitive_override ? k == "Audit" : (!contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
-
-A reference to a resource type must be followed by at least one attribute
-access, specifying the resource name.
-
-
-Error: Invalid reference
-
-  on diag_logging.tf line 51, in locals:
-  51: 						if !is_cognitive_override
-
-A reference to a resource type must be followed by at least one attribute
-access, specifying the resource name.
-
-Terraform Plan Exit Code: 1
-
-##[error]Script failed with exit code: 1
-/usr/local/bin/az account clear
-Finishing: Terraform Plan
+2026-02-04T13:40:22.6778416Z [1m[31mError: [0m[0m[1mReference to undeclared local value[0m
+2026-02-04T13:40:22.6778976Z 
+2026-02-04T13:40:22.6779693Z [0m  on diag_logging.tf line 18, in locals:
+2026-02-04T13:40:22.6780875Z   18: 					is_cognitive_override = type_key == "cognitive_accounts" && contains(keys([4mlocal.cognitive_accounts[0m), resource_value.name)
+2026-02-04T13:40:22.6781717Z [0m
+2026-02-04T13:40:22.6782408Z A local value with the name "cognitive_accounts" has not been declared.
+2026-02-04T13:40:22.6783142Z [0m[0m
+2026-02-04T13:40:22.6824555Z [31m
+2026-02-04T13:40:22.6826895Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T13:40:22.6827393Z 
+2026-02-04T13:40:22.6828825Z [0m  on diag_logging.tf line 23, in locals:
+2026-02-04T13:40:22.6830179Z   23: 								[4mis_cognitive_override[0m
+2026-02-04T13:40:22.6831382Z [0m
+2026-02-04T13:40:22.6832169Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T13:40:22.6832768Z access, specifying the resource name.
+2026-02-04T13:40:22.6834285Z [0m[0m
+2026-02-04T13:40:22.6870145Z [31m
+2026-02-04T13:40:22.6871810Z [1m[31mError: [0m[0m[1mReference to undeclared local value[0m
+2026-02-04T13:40:22.6872318Z 
+2026-02-04T13:40:22.6876509Z [0m  on diag_logging.tf line 24, in locals:
+2026-02-04T13:40:22.6877407Z   24: 								&& contains([4mlocal.cognitive_accounts[0m[resource_value.name].loga_logs, k)
+2026-02-04T13:40:22.6877997Z [0m
+2026-02-04T13:40:22.6878515Z A local value with the name "cognitive_accounts" has not been declared.
+2026-02-04T13:40:22.6879078Z [0m[0m
+2026-02-04T13:40:22.6913242Z [31m
+2026-02-04T13:40:22.6915392Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T13:40:22.6915649Z 
+2026-02-04T13:40:22.6917926Z [0m  on diag_logging.tf line 27, in locals:
+2026-02-04T13:40:22.6918675Z   27: 								![4mis_cognitive_override[0m
+2026-02-04T13:40:22.6919659Z [0m
+2026-02-04T13:40:22.6920264Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T13:40:22.6920872Z access, specifying the resource name.
+2026-02-04T13:40:22.6921438Z [0m[0m
+2026-02-04T13:40:22.6961691Z [31m
+2026-02-04T13:40:22.6962453Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T13:40:22.6962783Z 
+2026-02-04T13:40:22.6963295Z [0m  on diag_logging.tf line 38, in locals:
+2026-02-04T13:40:22.6963673Z   38: 						if [4mis_cognitive_override[0m 
+2026-02-04T13:40:22.6968350Z [0m
+2026-02-04T13:40:22.6970659Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T13:40:22.6971349Z access, specifying the resource name.
+2026-02-04T13:40:22.6972170Z [0m[0m
+2026-02-04T13:40:22.7012540Z [31m
+2026-02-04T13:40:22.7015562Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T13:40:22.7016039Z 
+2026-02-04T13:40:22.7016658Z [0m  on diag_logging.tf line 45, in locals:
+2026-02-04T13:40:22.7017253Z   45: 							[4mis_cognitive_override[0m ? k == "Audit" : (!contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
+2026-02-04T13:40:22.7017946Z [0m
+2026-02-04T13:40:22.7018248Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T13:40:22.7018577Z access, specifying the resource name.
+2026-02-04T13:40:22.7018894Z [0m[0m
+2026-02-04T13:40:22.7053894Z [31m
+2026-02-04T13:40:22.7055003Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T13:40:22.7055612Z 
+2026-02-04T13:40:22.7058545Z [0m  on diag_logging.tf line 51, in locals:
+2026-02-04T13:40:22.7065282Z   51: 						if ![4mis_cognitive_override[0m
+2026-02-04T13:40:22.7068262Z [0m
+2026-02-04T13:40:22.7073457Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T13:40:22.7075943Z access, specifying the resource name.
+2026-02-04T13:40:22.7078440Z [0m[0m
+2026-02-04T13:40:22.7205291Z Terraform Plan Exit Code: 1
+2026-02-04T13:40:22.7225420Z 
+2026-02-04T13:40:22.7282202Z ##[error]Script failed with exit code: 1
+2026-02-04T13:40:22.7300420Z [command]/usr/local/bin/az account clear
+2026-02-04T13:40:23.4587507Z ##[section]Finishing: Terraform Plan
