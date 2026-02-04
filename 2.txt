@@ -1,156 +1,73 @@
-2026-02-04T10:29:19.9483414Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9483810Z 
-2026-02-04T10:29:19.9484382Z [0m  on diag_logging.tf line 22, in locals:
-2026-02-04T10:29:19.9484852Z   19:                                     contains(
-2026-02-04T10:29:19.9485443Z   20:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9486023Z   21:                                         resource_value.name
-2026-02-04T10:29:19.9486630Z   22:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9487311Z [0m  23: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9488452Z [0m  24: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9489034Z [0m  25: [4m                                        {}[0m
-2026-02-04T10:29:19.9489764Z [0m  26: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9490360Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9491069Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9491844Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9492352Z [0m
-2026-02-04T10:29:19.9492842Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9493384Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9493844Z [0m[0m
-2026-02-04T10:29:19.9531719Z [31m
-2026-02-04T10:29:19.9532909Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9534542Z 
-2026-02-04T10:29:19.9545768Z [0m  on diag_logging.tf line 38, in locals:
-2026-02-04T10:29:19.9546250Z   35:                                     contains(
-2026-02-04T10:29:19.9546764Z   36:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9547255Z   37:                                         resource_value.name
-2026-02-04T10:29:19.9547881Z   38:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9549010Z [0m  39: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9549579Z [0m  40: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9550151Z [0m  41: [4m                                        {}[0m
-2026-02-04T10:29:19.9550906Z [0m  42: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9551492Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9552164Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9552819Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9553235Z [0m
-2026-02-04T10:29:19.9553691Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9554185Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9554614Z [0m[0m
-2026-02-04T10:29:19.9619659Z [31m
-2026-02-04T10:29:19.9621420Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9621882Z 
-2026-02-04T10:29:19.9622630Z [0m  on diag_logging.tf line 57, in locals:
-2026-02-04T10:29:19.9623095Z   54:                                     contains(
-2026-02-04T10:29:19.9623882Z   55:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9624606Z   56:                                         resource_value.name
-2026-02-04T10:29:19.9625168Z   57:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9625833Z [0m  58: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9626452Z [0m  59: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9626967Z [0m  60: [4m                                        {}[0m
-2026-02-04T10:29:19.9627921Z [0m  61: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9628599Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9629327Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9630073Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9630639Z [0m
-2026-02-04T10:29:19.9631130Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9631732Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9632194Z [0m[0m
-2026-02-04T10:29:19.9689452Z [31m
-2026-02-04T10:29:19.9693500Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9694056Z 
-2026-02-04T10:29:19.9696186Z [0m  on diag_logging.tf line 73, in locals:
-2026-02-04T10:29:19.9696972Z   70:                                     contains(
-2026-02-04T10:29:19.9700988Z   71:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9701894Z   72:                                         resource_value.name
-2026-02-04T10:29:19.9702506Z   73:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9703193Z [0m  74: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9703875Z [0m  75: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9704454Z [0m  76: [4m                                        {}[0m
-2026-02-04T10:29:19.9705237Z [0m  77: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9705863Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9712749Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9717565Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9718258Z [0m
-2026-02-04T10:29:19.9718728Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9719024Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9719288Z [0m[0m
-2026-02-04T10:29:19.9775084Z [31m
-2026-02-04T10:29:19.9777146Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9778874Z 
-2026-02-04T10:29:19.9781539Z [0m  on diag_logging.tf line 92, in locals:
-2026-02-04T10:29:19.9792594Z   89:                                     contains(
-2026-02-04T10:29:19.9793216Z   90:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9793762Z   91:                                         resource_value.name
-2026-02-04T10:29:19.9794372Z   92:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9795099Z [0m  93: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9796102Z [0m  94: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9799220Z [0m  95: [4m                                        {}[0m
-2026-02-04T10:29:19.9800180Z [0m  96: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9800574Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9800940Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9801317Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9801575Z [0m
-2026-02-04T10:29:19.9801832Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9802139Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9802594Z [0m[0m
-2026-02-04T10:29:19.9854413Z [31m
-2026-02-04T10:29:19.9855634Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9857982Z 
-2026-02-04T10:29:19.9858786Z [0m  on diag_logging.tf line 108, in locals:
-2026-02-04T10:29:19.9859266Z  105:                                     contains(
-2026-02-04T10:29:19.9862890Z  106:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9863974Z  107:                                         resource_value.name
-2026-02-04T10:29:19.9877316Z  108:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9878886Z [0m 109: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9879848Z [0m 110: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9880434Z [0m 111: [4m                                        {}[0m
-2026-02-04T10:29:19.9881264Z [0m 112: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9881947Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9882675Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9883438Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9888605Z [0m
-2026-02-04T10:29:19.9889388Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9891188Z expressions are object and object, respectively.
-2026-02-04T10:29:19.9892109Z [0m[0m
-2026-02-04T10:29:19.9922155Z [31m
-2026-02-04T10:29:19.9924075Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:19.9924746Z 
-2026-02-04T10:29:19.9925650Z [0m  on diag_logging.tf line 127, in locals:
-2026-02-04T10:29:19.9926455Z  124:                                     contains(
-2026-02-04T10:29:19.9938565Z  125:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:19.9939609Z  126:                                         resource_value.name
-2026-02-04T10:29:19.9940431Z  127:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:19.9941450Z [0m 128: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:19.9942170Z [0m 129: [4m                                        "per_resource",[0m
-2026-02-04T10:29:19.9942779Z [0m 130: [4m                                        {}[0m
-2026-02-04T10:29:19.9943579Z [0m 131: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:19.9944293Z [0m    [90m|----------------[0m
-2026-02-04T10:29:19.9944941Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:19.9945688Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:19.9946477Z [0m
-2026-02-04T10:29:19.9946967Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:19.9947448Z expressions are object and object, respectively.
-2026-02-04T10:29:20.0028311Z [0m[0m
-2026-02-04T10:29:20.0028842Z [31m
-2026-02-04T10:29:20.0029427Z [1m[31mError: [0m[0m[1mInconsistent conditional result types[0m
-2026-02-04T10:29:20.0029676Z 
-2026-02-04T10:29:20.0030175Z [0m  on diag_logging.tf line 143, in locals:
-2026-02-04T10:29:20.0030603Z  140:                                     contains(
-2026-02-04T10:29:20.0031086Z  141:                                         keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-2026-02-04T10:29:20.0031565Z  142:                                         resource_value.name
-2026-02-04T10:29:20.0056733Z  143:                                     ) ? [4mlookup([0m
-2026-02-04T10:29:20.0063115Z [0m 144: [4m                                        lookup(local.diag_logging_loga_targets, type_key, {}),[0m
-2026-02-04T10:29:20.0063856Z [0m 145: [4m                                        "per_resource",[0m
-2026-02-04T10:29:20.0064449Z [0m 146: [4m                                        {}[0m
-2026-02-04T10:29:20.0065167Z [0m 147: [4m                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})[0m
-2026-02-04T10:29:20.0065805Z [0m    [90m|----------------[0m
-2026-02-04T10:29:20.0069858Z [0m    [90m|[0m [1mlocal.diag_logging_loga_targets[0m is object with 16 attributes[0m
-2026-02-04T10:29:20.0070377Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
-2026-02-04T10:29:20.0070719Z [0m
-2026-02-04T10:29:20.0070999Z The true and false result expressions must have consistent types. The given
-2026-02-04T10:29:20.0071361Z expressions are object and object, respectively.
-2026-02-04T10:29:20.0071662Z [0m[0m
-2026-02-04T10:29:20.0755147Z Terraform Plan Exit Code: 1
-2026-02-04T10:29:20.0778675Z 
-2026-02-04T10:29:20.0836579Z ##[error]Script failed with exit code: 1
-2026-02-04T10:29:20.0855477Z [command]/usr/local/bin/az account clear
-2026-02-04T10:29:20.8011424Z ##[section]Finishing: Terraform Plan
+2026-02-04T09:20:20.9014189Z [31m
+2026-02-04T09:20:20.9015703Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9015924Z 
+2026-02-04T09:20:20.9016307Z [0m  on diag_logging.tf line 27, in locals:
+2026-02-04T09:20:20.9016852Z   27: 						if contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "logs", []), k)
+2026-02-04T09:20:20.9017201Z [0m
+2026-02-04T09:20:20.9017494Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9017820Z access, specifying the resource name.
+2026-02-04T09:20:20.9018113Z [0m[0m
+2026-02-04T09:20:20.9150884Z [31m
+2026-02-04T09:20:20.9161857Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9163142Z 
+2026-02-04T09:20:20.9164771Z [0m  on diag_logging.tf line 28, in locals:
+2026-02-04T09:20:20.9165782Z   28: 						|| contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "logs", []), "*")
+2026-02-04T09:20:20.9166453Z [0m
+2026-02-04T09:20:20.9167069Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9167680Z access, specifying the resource name.
+2026-02-04T09:20:20.9168249Z [0m[0m
+2026-02-04T09:20:20.9197735Z [31m
+2026-02-04T09:20:20.9198853Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9200209Z 
+2026-02-04T09:20:20.9201832Z [0m  on diag_logging.tf line 32, in locals:
+2026-02-04T09:20:20.9202859Z   32: 						if contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "metrics", []), k)	
+2026-02-04T09:20:20.9203625Z [0m
+2026-02-04T09:20:20.9204246Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9204883Z access, specifying the resource name.
+2026-02-04T09:20:20.9205496Z [0m[0m
+2026-02-04T09:20:20.9263852Z [31m
+2026-02-04T09:20:20.9266044Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9267421Z 
+2026-02-04T09:20:20.9268184Z [0m  on diag_logging.tf line 33, in locals:
+2026-02-04T09:20:20.9269464Z   33: 						|| contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "metrics", []), "*")
+2026-02-04T09:20:20.9270879Z [0m
+2026-02-04T09:20:20.9271494Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9275876Z access, specifying the resource name.
+2026-02-04T09:20:20.9276825Z [0m[0m
+2026-02-04T09:20:20.9333707Z [31m
+2026-02-04T09:20:20.9338651Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9339248Z 
+2026-02-04T09:20:20.9339773Z [0m  on diag_logging.tf line 37, in locals:
+2026-02-04T09:20:20.9340689Z   37: 						if !contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "logs", []), k)
+2026-02-04T09:20:20.9341042Z [0m
+2026-02-04T09:20:20.9341337Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9341666Z access, specifying the resource name.
+2026-02-04T09:20:20.9342403Z [0m[0m
+2026-02-04T09:20:20.9388621Z [31m
+2026-02-04T09:20:20.9392241Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9392601Z 
+2026-02-04T09:20:20.9393894Z [0m  on diag_logging.tf line 38, in locals:
+2026-02-04T09:20:20.9394893Z   38: 						&& !contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "logs", []), "*")
+2026-02-04T09:20:20.9395549Z [0m
+2026-02-04T09:20:20.9396112Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9396727Z access, specifying the resource name.
+2026-02-04T09:20:20.9397323Z [0m[0m
+2026-02-04T09:20:20.9439346Z [31m
+2026-02-04T09:20:20.9440078Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9440340Z 
+2026-02-04T09:20:20.9441139Z [0m  on diag_logging.tf line 42, in locals:
+2026-02-04T09:20:20.9442140Z   42: 						if !contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "metrics", []), k)
+2026-02-04T09:20:20.9442795Z [0m
+2026-02-04T09:20:20.9443425Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9444073Z access, specifying the resource name.
+2026-02-04T09:20:20.9444659Z [0m[0m
+2026-02-04T09:20:20.9504287Z [31m
+2026-02-04T09:20:20.9530631Z [1m[31mError: [0m[0m[1mInvalid reference[0m
+2026-02-04T09:20:20.9538070Z 
+2026-02-04T09:20:20.9539359Z [0m  on diag_logging.tf line 43, in locals:
+2026-02-04T09:20:20.9543440Z   43: 						&& !contains(lookup(lookup([4mloga_target_config[0m, type_key, {}), "metrics", []), "*")
+2026-02-04T09:20:20.9544243Z [0m
+2026-02-04T09:20:20.9544713Z A reference to a resource type must be followed by at least one attribute
+2026-02-04T09:20:20.9545416Z access, specifying the resource name.
+2026-02-04T09:20:20.9546237Z [0m[0m
+2026-02-04T09:20:20.9674172Z Terraform Plan Exit Code: 1
