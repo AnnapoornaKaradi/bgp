@@ -15,15 +15,9 @@ diag_settings_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten
 					region_mismatch = length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
 					# LogA is able to handle resources in any region, however event hub has to be in the same region as the resource.
 					# When there is a resource in a region that does not have an event hub, the following code will override its requested location and direct it to LogA.
-					# Special handling for ai-foundry-eastus2 Cognitive Services
-					# Special-case logic for ai-foundry-eastus2 temporarily removed for testing
 					
-					is_audit_to_evh = contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name)
-					
-					
-					
-					logs_loga_targets = is_audit_to_evh ? [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-					 if k != "Audit" ] : [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v 
+									
+					logs_loga_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v if k != "Audit"] : [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
 						if contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
 						|| contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*")
 						|| length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
@@ -33,21 +27,18 @@ diag_settings_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten
 						|| contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), "*")
 						|| length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
 					]
-					# Special-case logic for ai-foundry-eastus2 temporarily removed for testing
-					logs_evh_targets = is_audit_to_evh ? [ "Audit"] : [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v 
+					
+					logs_evh_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v if k != "Audit"] : [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
 						if !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
 						&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*")
 						&& length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
 					]
-					metrics_evh_targets = (
-					type_key == "cognitive_accounts" && resource_value.name == "ai-foundry-eastus2"
-					? []
-					: [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v 
+					metrics_evh_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [] : [
+						for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v 
 						if !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), k)
 						&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), "*")
 						&& length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
 					]
-					)
 				}
 			if !contains(lookup(local.my_env, "diag_logging_excluded_resource_groups", []), resource_value.resource_group_name) ]
 		]
