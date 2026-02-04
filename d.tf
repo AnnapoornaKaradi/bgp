@@ -17,7 +17,7 @@ diag_settings_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten
 					# When there is a resource in a region that does not have an event hub, the following code will override its requested location and direct it to LogA.
 					
 									
-					logs_loga_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v if k != "Audit"] : [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
+					logs_loga_targets = contains(keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})), resource_value.name) ? [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v if k != "Audit"] : [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
 						if contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
 						|| contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*")
 						|| length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
@@ -28,7 +28,9 @@ diag_settings_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten
 						|| length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
 					]
 					
-					logs_evh_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v if k != "Audit"] : [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
+					logs_evh_targets = contains(keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})), resource_value.name) ? [ "Audit"
+					] :
+					[ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
 						if !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
 						&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*")
 						&& length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
