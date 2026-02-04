@@ -1,220 +1,26 @@
-locals {
-
-diag_settings_iterator = local.site_type == "primary" ? {
-  for v in flatten([
-    for type_key, type_name in local.diag_logging_resource_types : [
-      for resource_value in data.azurerm_resources.diag[type_key].resources : {
-        type_key         = type_key
-        resource_name    = resource_value.name
-        resource_id      = resource_value.id
-
-        region_short_name = length([
-          for r in local.regions :
-          r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-        ]) == 0
-          ? local.regions.primary.name_short
-          : [
-              for r in local.regions :
-              r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-            ][0]
-
-        region_mismatch = length([
-          for r in local.regions :
-          r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-        ]) == 0
-
-        logs_loga_targets = [
-          for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-          if contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "logs",
-              []
-            ),
-            k
-          )
-          || contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "logs",
-              []
-            ),
-            "*"
-          )
-          || length([
-            for r in local.regions :
-            r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-          ]) == 0
-        ]
-
-        metrics_loga_targets = [
-          for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v
-          if contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "metrics",
-              []
-            ),
-            k
-          )
-          || contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "metrics",
-              []
-            ),
-            "*"
-          )
-          || length([
-            for r in local.regions :
-            r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-          ]) == 0
-        ]
-
-        logs_evh_targets = [
-          for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-          if !contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "logs",
-              []
-            ),
-            k
-          )
-          && !contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "logs",
-              []
-            ),
-            "*"
-          )
-          && length([
-            for r in local.regions :
-            r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-          ]) != 0
-        ]
-
-        metrics_evh_targets = [
-          for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v
-          if !contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "metrics",
-              []
-            ),
-            k
-          )
-          && !contains(
-            lookup(
-              merge(
-                lookup(local.diag_logging_loga_targets, type_key, {}),
-                lookup(
-                  lookup(
-                    lookup(local.diag_logging_loga_targets, type_key, {}),
-                    "per_resource",
-                    {}
-                  ),
-                  resource_value.name,
-                  {}
-                )
-              ),
-              "metrics",
-              []
-            ),
-            "*"
-          )
-          && length([
-            for r in local.regions :
-            r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
-          ]) != 0
-        ]
-      }
-      if !contains(
-        lookup(local.my_env, "diag_logging_excluded_resource_groups", []),
-        resource_value.resource_group_name
-      )
-    ]
-  ]) :
-  lower(replace(v.resource_id, "/", "_")) => v
-  if length(regexall("/databases/master", v.resource_id)) == 0
-} : {}
-
-}
+2026-02-04T12:03:11.4231221Z ]
+2026-02-04T12:03:17.6763374Z [31m[0mThere are some problems with the configuration, described below.
+2026-02-04T12:03:17.6764077Z 
+2026-02-04T12:03:17.6764922Z The Terraform configuration must be valid before initialization so that
+2026-02-04T12:03:17.6765632Z Terraform can determine which modules and providers need to be installed.[0m[0m[0m
+2026-02-04T12:03:17.6766115Z [31m
+2026-02-04T12:03:17.6766582Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2026-02-04T12:03:17.6766737Z 
+2026-02-04T12:03:17.6767166Z [0m  on diag_logging.tf line 18, in locals:
+2026-02-04T12:03:17.6767688Z   18:           [4m?[0m local.regions.primary.name_short
+2026-02-04T12:03:17.6768074Z [0m
+2026-02-04T12:03:17.6768443Z Expected the start of an expression, but found an invalid expression token.
+2026-02-04T12:03:17.6768864Z [0m[0m
+2026-02-04T12:03:17.9104144Z [31m
+2026-02-04T12:03:17.9104692Z [1m[31mError: [0m[0m[1mInvalid expression[0m
+2026-02-04T12:03:17.9104869Z 
+2026-02-04T12:03:17.9106223Z [0m  on diag_logging.tf line 18, in locals:
+2026-02-04T12:03:17.9106700Z   18:           [4m?[0m local.regions.primary.name_short
+2026-02-04T12:03:17.9106934Z [0m
+2026-02-04T12:03:17.9107155Z Expected the start of an expression, but found an invalid expression token.
+2026-02-04T12:03:17.9107409Z [0m[0m
+2026-02-04T12:03:17.9132038Z Terraform Plan Exit Code: 1
+2026-02-04T12:03:17.9145006Z 
+2026-02-04T12:03:17.9200431Z ##[error]Script failed with exit code: 1
+2026-02-04T12:03:17.9223018Z [command]/usr/local/bin/az account clear
+2026-02-04T12:03:18.6583973Z ##[section]Finishing: Terraform Plan
