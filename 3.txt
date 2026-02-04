@@ -1,0 +1,14 @@
+
+        region_short_name = ( length([
+          for r in local.regions :
+          r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
+        ]) == 0
+		) ? local.regions.primary.name_short : [
+              for r in local.regions :
+              r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
+            ][0]
+
+        region_mismatch = length([
+          for r in local.regions :
+          r.name_short if resource_value.location == lower(replace(r.name, " ", ""))
+        ]) == 0
