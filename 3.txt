@@ -1,25 +1,31 @@
-There are some problems with the configuration, described below.
-
-The Terraform configuration must be valid before initialization so that
-Terraform can determine which modules and providers need to be installed.
-
-Error: Missing attribute value
-
-  on diag_logging.tf line 19, in locals:
-  18: 					is_cognitive_override = {
-  19: 						type_key == "cognitive_accounts" 
-  20: 						&& contains(keys(local.cognitive_accounts), resource_value.name)
-
-Expected an attribute value, introduced by an equals sign ("=").
 
 
-Error: Missing attribute value
+  on diag_logging.tf line 38, in locals:
+  38: 						if is_cognitive_override 
 
-  on diag_logging.tf line 19, in locals:
-  18: 					is_cognitive_override = {
-  19: 						type_key == "cognitive_accounts" 
-  20: 						&& contains(keys(local.cognitive_accounts), resource_value.name)
+A reference to a resource type must be followed by at least one attribute
+access, specifying the resource name.
 
-Expected an attribute value, introduced by an equals sign ("=").
+
+Error: Invalid reference
+
+  on diag_logging.tf line 45, in locals:
+  45: 							is_cognitive_override ? k == "Audit" : (!contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
+
+A reference to a resource type must be followed by at least one attribute
+access, specifying the resource name.
+
+
+Error: Invalid reference
+
+  on diag_logging.tf line 51, in locals:
+  51: 						if !is_cognitive_override
+
+A reference to a resource type must be followed by at least one attribute
+access, specifying the resource name.
 
 Terraform Plan Exit Code: 1
+
+##[error]Script failed with exit code: 1
+/usr/local/bin/az account clear
+Finishing: Terraform Plan
