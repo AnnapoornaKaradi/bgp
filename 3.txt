@@ -1,25 +1,66 @@
-2026-02-04T14:05:30.2196374Z rerun this command to reinitialize your working directory. If you forget, other
-2026-02-04T14:05:30.2196969Z commands will detect it and remind you to do so if necessary.[0m
-2026-02-04T14:05:37.6969522Z [31m
-2026-02-04T14:05:37.6971218Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T14:05:37.6971541Z 
-2026-02-04T14:05:37.6972102Z [0m  on diag_logging.tf line 41, in locals:
-2026-02-04T14:05:37.6972739Z   41: 						if [4mis_cognitive_override[0m 
-2026-02-04T14:05:37.6973172Z [0m
-2026-02-04T14:05:37.6973639Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T14:05:37.6974194Z access, specifying the resource name.
-2026-02-04T14:05:37.6974670Z [0m[0m
-2026-02-04T14:05:37.7010321Z [31m
-2026-02-04T14:05:37.7015215Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T14:05:37.7015461Z 
-2026-02-04T14:05:37.7016067Z [0m  on diag_logging.tf line 59, in locals:
-2026-02-04T14:05:37.7016660Z   59: 						if ![4mis_cognitive_override[0m
-2026-02-04T14:05:37.7017116Z [0m
-2026-02-04T14:05:37.7017716Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T14:05:37.7018198Z access, specifying the resource name.
-2026-02-04T14:05:37.7018654Z [0m[0m
-2026-02-04T14:05:37.7140074Z Terraform Plan Exit Code: 1
-2026-02-04T14:05:37.7151401Z 
-2026-02-04T14:05:37.7201853Z ##[error]Script failed with exit code: 1
-2026-02-04T14:05:37.7219083Z [command]/usr/local/bin/az account clear
-2026-02-04T14:05:38.3941886Z ##[section]Finishing: Terraform Plan
+2026-02-04T14:15:06.9888755Z [1m[31mError: [0m[0m[1mInvalid index[0m
+2026-02-04T14:15:06.9889210Z 
+2026-02-04T14:15:06.9890123Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:06.9891827Z   25: 								&& contains(local.cognitive_accounts[4m[resource_value.name][0m.loga_logs, k)
+2026-02-04T14:15:06.9892727Z [0m    [90m|----------------[0m
+2026-02-04T14:15:06.9893904Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:06.9894886Z [0m    [90m|[0m [1mresource_value.name[0m is "hp-wvd4-sandbox-eus2-04"[0m
+2026-02-04T14:15:06.9895686Z [0m
+2026-02-04T14:15:06.9896659Z The given key does not identify an element in this collection value.
+2026-02-04T14:15:06.9897720Z [0m[0m
+2026-02-04T14:15:06.9951226Z [31m
+2026-02-04T14:15:06.9951740Z [1m[31mError: [0m[0m[1mInvalid index[0m
+2026-02-04T14:15:06.9951974Z 
+2026-02-04T14:15:06.9952468Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:06.9952961Z   25: 								&& contains(local.cognitive_accounts[4m[resource_value.name][0m.loga_logs, k)
+2026-02-04T14:15:06.9953370Z [0m    [90m|----------------[0m
+2026-02-04T14:15:06.9953882Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:06.9954371Z [0m    [90m|[0m [1mresource_value.name[0m is "hp-wvd-sandbox-eus2-01"[0m
+2026-02-04T14:15:06.9954722Z [0m
+2026-02-04T14:15:06.9954992Z The given key does not identify an element in this collection value.
+2026-02-04T14:15:06.9955368Z [0m[0m
+2026-02-04T14:15:06.9994277Z [31m
+2026-02-04T14:15:07.0022152Z [1m[31mError: [0m[0m[1mInvalid index[0m
+2026-02-04T14:15:07.0022685Z 
+2026-02-04T14:15:07.0029704Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:07.0033317Z   25: 								&& contains(local.cognitive_accounts[4m[resource_value.name][0m.loga_logs, k)
+2026-02-04T14:15:07.0035370Z [0m    [90m|----------------[0m
+2026-02-04T14:15:07.0036328Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:07.0037235Z [0m    [90m|[0m [1mresource_value.name[0m is "wvdw-wvd2-sandbox-eus2-02"[0m
+2026-02-04T14:15:07.0038156Z [0m
+2026-02-04T14:15:07.0038853Z The given key does not identify an element in this collection value.
+2026-02-04T14:15:07.0039522Z [0m[0m
+2026-02-04T14:15:07.0056402Z [31m
+2026-02-04T14:15:07.0058014Z [1m[31mError: [0m[0m[1mInvalid index[0m
+2026-02-04T14:15:07.0058257Z 
+2026-02-04T14:15:07.0060701Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:07.0061566Z   25: 								&& contains(local.cognitive_accounts[4m[resource_value.name][0m.loga_logs, k)
+2026-02-04T14:15:07.0061949Z [0m    [90m|----------------[0m
+2026-02-04T14:15:07.0065952Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:07.0068129Z [0m    [90m|[0m [1mresource_value.name[0m is "wvdw-wvd4-sandbox-eus2-04"[0m
+2026-02-04T14:15:07.0079730Z [0m
+2026-02-04T14:15:07.0080420Z The given key does not identify an element in this collection value.
+2026-02-04T14:15:07.0080935Z [0m[0m
+2026-02-04T14:15:07.0113271Z [31m
+2026-02-04T14:15:07.0115927Z [1m[31mError: [0m[0m[1mInvalid index[0m
+2026-02-04T14:15:07.0116205Z 
+2026-02-04T14:15:07.0117042Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:07.0117693Z   25: 								&& contains(local.cognitive_accounts[4m[resource_value.name][0m.loga_logs, k)
+2026-02-04T14:15:07.0118155Z [0m    [90m|----------------[0m
+2026-02-04T14:15:07.0119039Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:07.0119443Z [0m    [90m|[0m [1mresource_value.name[0m is "wvdw-sandbox-eus2-01"[0m
+2026-02-04T14:15:07.0119701Z [0m
+2026-02-04T14:15:07.0119948Z The given key does not identify an element in this collection value.
+2026-02-04T14:15:07.0120248Z [0m[0m
+2026-02-04T14:15:07.0180611Z [31m
+2026-02-04T14:15:07.0182735Z [1m[31mError: [0m[0m[1mUnsupported attribute[0m
+2026-02-04T14:15:07.0183005Z 
+2026-02-04T14:15:07.0183562Z [0m  on diag_logging.tf line 25, in locals:
+2026-02-04T14:15:07.0184328Z   25: 								&& contains(local.cognitive_accounts[resource_value.name][4m.loga_logs[0m, k)
+2026-02-04T14:15:07.0184961Z [0m    [90m|----------------[0m
+2026-02-04T14:15:07.0185622Z [0m    [90m|[0m [1mlocal.cognitive_accounts[0m is object with 1 attribute "ai-foundry-eastus2"[0m
+2026-02-04T14:15:07.0186313Z [0m    [90m|[0m [1mresource_value.name[0m is "ai-foundry-eastus2"[0m
+2026-02-04T14:15:07.0186843Z [0m
+2026-02-04T14:15:07.0187262Z This object does not have an attribute named "loga_logs".
+2026-02-04T14:15:07.0187896Z [0m[0m
+2026-02-04T14:15:07.1030087Z Terraform Plan Exit Code: 1
