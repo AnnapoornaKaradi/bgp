@@ -1,80 +1,25 @@
-2026-02-04T12:50:48.4880000Z If you ever set or change modules or backend configuration for Terraform,
-2026-02-04T12:50:48.4880546Z rerun this command to reinitialize your working directory. If you forget, other
-2026-02-04T12:50:48.4881077Z commands will detect it and remind you to do so if necessary.[0m
-2026-02-04T12:51:00.2857428Z [31m
-2026-02-04T12:51:00.2858244Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.2858444Z 
-2026-02-04T12:51:00.2858938Z [0m  on diag_logging.tf line 31, in locals:
-2026-02-04T12:51:00.2864363Z   31:           if contains(lookup([4mloga_config[0m, "logs", []), k)
-2026-02-04T12:51:00.2864844Z [0m
-2026-02-04T12:51:00.2865267Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.2865739Z access, specifying the resource name.
-2026-02-04T12:51:00.2866172Z [0m[0m
-2026-02-04T12:51:00.2899003Z [31m
-2026-02-04T12:51:00.2904947Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.2908042Z 
-2026-02-04T12:51:00.2908772Z [0m  on diag_logging.tf line 32, in locals:
-2026-02-04T12:51:00.2909440Z   32:           	|| contains(lookup([4mloga_config[0m, "logs", []), "*")
-2026-02-04T12:51:00.2909906Z [0m
-2026-02-04T12:51:00.2910296Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.2910720Z access, specifying the resource name.
-2026-02-04T12:51:00.2911165Z [0m[0m
-2026-02-04T12:51:00.2955764Z [31m
-2026-02-04T12:51:00.2956373Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.2956763Z 
-2026-02-04T12:51:00.2957343Z [0m  on diag_logging.tf line 38, in locals:
-2026-02-04T12:51:00.2957952Z   38:           if contains(lookup([4mloga_config[0m, "metrics", []), k)
-2026-02-04T12:51:00.2958422Z [0m
-2026-02-04T12:51:00.2958891Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.2959389Z access, specifying the resource name.
-2026-02-04T12:51:00.2959969Z [0m[0m
-2026-02-04T12:51:00.2988655Z [31m
-2026-02-04T12:51:00.2992485Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.2992687Z 
-2026-02-04T12:51:00.2993279Z [0m  on diag_logging.tf line 39, in locals:
-2026-02-04T12:51:00.2994255Z   39: 			|| contains(lookup([4mloga_config[0m, "metrics", []), "*")
-2026-02-04T12:51:00.2994711Z [0m
-2026-02-04T12:51:00.2997749Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.2998273Z access, specifying the resource name.
-2026-02-04T12:51:00.2998773Z [0m[0m
-2026-02-04T12:51:00.3030421Z [31m
-2026-02-04T12:51:00.3034713Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.3037155Z 
-2026-02-04T12:51:00.3037743Z [0m  on diag_logging.tf line 45, in locals:
-2026-02-04T12:51:00.3038339Z   45:           if !contains(lookup([4mloga_config[0m, "logs", []), k)
-2026-02-04T12:51:00.3038793Z [0m
-2026-02-04T12:51:00.3039226Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.3039723Z access, specifying the resource name.
-2026-02-04T12:51:00.3040428Z [0m[0m
-2026-02-04T12:51:00.3069549Z [31m
-2026-02-04T12:51:00.3072086Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.3072315Z 
-2026-02-04T12:51:00.3072828Z [0m  on diag_logging.tf line 46, in locals:
-2026-02-04T12:51:00.3074113Z   46:              && !contains(lookup([4mloga_config[0m, "logs", []), "*")
-2026-02-04T12:51:00.3074848Z [0m
-2026-02-04T12:51:00.3075479Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.3076215Z access, specifying the resource name.
-2026-02-04T12:51:00.3076842Z [0m[0m
-2026-02-04T12:51:00.3104942Z [31m
-2026-02-04T12:51:00.3106794Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.3107334Z 
-2026-02-04T12:51:00.3108344Z [0m  on diag_logging.tf line 52, in locals:
-2026-02-04T12:51:00.3108984Z   52:           if !contains(lookup([4mloga_config[0m, "metrics", []), k)
-2026-02-04T12:51:00.3109424Z [0m
-2026-02-04T12:51:00.3109847Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.3110831Z access, specifying the resource name.
-2026-02-04T12:51:00.3111308Z [0m[0m
-2026-02-04T12:51:00.3140936Z [31m
-2026-02-04T12:51:00.3141538Z [1m[31mError: [0m[0m[1mInvalid reference[0m
-2026-02-04T12:51:00.3153497Z 
-2026-02-04T12:51:00.3154836Z [0m  on diag_logging.tf line 53, in locals:
-2026-02-04T12:51:00.3171580Z   53:              && !contains(lookup([4mloga_config[0m, "metrics", []), "*")
-2026-02-04T12:51:00.3183159Z [0m
-2026-02-04T12:51:00.3183663Z A reference to a resource type must be followed by at least one attribute
-2026-02-04T12:51:00.3184136Z access, specifying the resource name.
-2026-02-04T12:51:00.3187419Z [0m[0m
-2026-02-04T12:51:00.3284955Z Terraform Plan Exit Code: 1
-2026-02-04T12:51:00.3304932Z 
-2026-02-04T12:51:00.3357174Z ##[error]Script failed with exit code: 1
-2026-02-04T12:51:00.3380954Z [command]/usr/local/bin/az account clear
-2026-02-04T12:51:01.1524361Z ##[section]Finishing: Terraform Plan
+There are some problems with the configuration, described below.
+
+The Terraform configuration must be valid before initialization so that
+Terraform can determine which modules and providers need to be installed.
+
+Error: Missing attribute value
+
+  on diag_logging.tf line 19, in locals:
+  18: 					is_cognitive_override = {
+  19: 						type_key == "cognitive_accounts" 
+  20: 						&& contains(keys(local.cognitive_accounts), resource_value.name)
+
+Expected an attribute value, introduced by an equals sign ("=").
+
+
+Error: Missing attribute value
+
+  on diag_logging.tf line 19, in locals:
+  18: 					is_cognitive_override = {
+  19: 						type_key == "cognitive_accounts" 
+  20: 						&& contains(keys(local.cognitive_accounts), resource_value.name)
+
+Expected an attribute value, introduced by an equals sign ("=").
+
+Terraform Plan Exit Code: 1
