@@ -1,3 +1,5 @@
+2026-02-04T14:05:30.2196374Z rerun this command to reinitialize your working directory. If you forget, other
+2026-02-04T14:05:30.2196969Z commands will detect it and remind you to do so if necessary.[0m
 2026-02-04T14:05:37.6969522Z [31m
 2026-02-04T14:05:37.6971218Z [1m[31mError: [0m[0m[1mInvalid reference[0m
 2026-02-04T14:05:37.6971541Z 
