@@ -1,22 +1,25 @@
-Error: Error in function call
+There are some problems with the configuration, described below.
 
-  on diag_logging.tf line 36, in locals:
-  36: 					metrics_evh_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [] : [
-    |----------------
-    | local.diag_logging_loga_targets is object with 16 attributes
-    | resource_value.name is "wvdw-wvd4-sandbox-eus2-04"
+The Terraform configuration must be valid before initialization so that
+Terraform can determine which modules and providers need to be installed.
 
-Call to function "contains" failed: argument must be list, tuple, or set.
+Error: Argument or block definition required
+
+  on diag_logging.tf line 153, in data "azurerm_monitor_diagnostic_categories" "env":
+ 153:     ? { for k, v in data.azurerm_resources.diag : k => v if length(v.resources) > 0 }
+
+An argument or block definition is required here.
 
 
-Error: Error in function call
+Error: Argument or block definition required
 
-  on diag_logging.tf line 36, in locals:
-  36: 					metrics_evh_targets = contains( lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {}), resource_value.name) ? [] : [
-    |----------------
-    | local.diag_logging_loga_targets is object with 16 attributes
-    | resource_value.name is "wvdw-sandbox-eus2-01"
+  on diag_logging.tf line 153, in data "azurerm_monitor_diagnostic_categories" "env":
+ 153:     ? { for k, v in data.azurerm_resources.diag : k => v if length(v.resources) > 0 }
 
-Call to function "contains" failed: argument must be list, tuple, or set.
+An argument or block definition is required here.
 
 Terraform Plan Exit Code: 1
+
+##[error]Script failed with exit code: 1
+/usr/local/bin/az account clear
+Finishing: Terraform Plan
