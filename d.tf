@@ -2,160 +2,70 @@
 # It is assumed that this step creates no new resources which need diagnostic logging, therefore it will catch everything the first run
 # If that isn't the case, it will still work, however it will require multiple runs to catch everything (which is not recommended)
 locals {
-
+cognitive_accounts = {
+	"ai-foundry-eastus2" = {}
+}
 diag_settings_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten(
-        [ for type_key, type_name in local.diag_logging_resource_types :
-            [ for resource_key, resource_value in data.azurerm_resources.diag[type_key].resources :
-                {
-                    type_key = type_key
-                    resource_name = resource_value.name
-                    resource_id = resource_value.id
-                    region_short_name = length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0 ? local.regions.primary.name_short : [ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ][0]
-                    region_mismatch = length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
-                    logs_loga_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-                        if contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "logs", []
-                            ),
-                            k
-                        )
-                        || contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "logs", []
-                            ),
-                            "*"
-                        )
-                        || length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
-                    ]
-                    metrics_loga_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v
-                        if contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "metrics", []
-                            ),
-                            k
-                        )
-                        || contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "metrics", []
-                            ),
-                            "*"
-                        )
-                        || length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
-                    ]
-                    logs_evh_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v
-                        if !contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "logs", []
-                            ),
-                            k
-                        )
-                        && !contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "logs", []
-                            ),
-                            "*"
-                        )
-                        && length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
-                    ]
-                    metrics_evh_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v
-                        if !contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "metrics", []
-                            ),
-                            k
-                        )
-                        && !contains(
-                            lookup(
-                                lookup(
-                                    contains(
-                                        keys(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "per_resource", {})),
-                                        resource_value.name
-                                    ) ? lookup(
-                                        lookup(local.diag_logging_loga_targets, type_key, {}),
-                                        "per_resource",
-                                        {}
-                                    )[resource_value.name] : lookup(local.diag_logging_loga_targets, type_key, {})
-                                , type_key, {}),
-                            "metrics", []
-                            ),
-                            "*"
-                        )
-                        && length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
-                    ]
-                }
-            if !contains(lookup(local.my_env, "diag_logging_excluded_resource_groups", []), resource_value.resource_group_name) ]
-        ]
-    )) : lower(replace(v.resource_id, "/", "_")) => v if length(regexall("/databases/master", v.resource_id)) == 0 }) : {}
+		[ for type_key, type_name in local.diag_logging_resource_types :
+			[ for resource_key, resource_value in data.azurerm_resources.diag[type_key].resources :
+				{
+					type_key = type_key
+					resource_name = resource_value.name
+					resource_id = resource_value.id
+					# Detect the region this should be pinned to based on the resources location with the default being primary.
+					region_short_name = length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0 ? local.regions.primary.name_short : [ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ][0]
+					region_mismatch = length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
+					# LogA is able to handle resources in any region, however event hub has to be in the same region as the resource.
+					# When there is a resource in a region that does not have an event hub, the following code will override its requested location and direct it to LogA.
+					is_cognitive_override = type_key == "cognitive_accounts" && contains(keys(local.cognitive_accounts), resource_value.name)
+					
+					logs_loga_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v 
+						if 
+							(
+								type_key == "cognitive_accounts"
+								&& contains(keys(local.cognitive_accounts), resource_value.name)
+								&& contains(local.cognitive_accounts[resource_value.name].loga_logs, k)
+							)
+							|| (
+								type_key != "cognitive_accounts"
+								&&	(
+									contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
+									|| contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*")
+								)
+							)
+							|| length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
+						
+					]
+
+					metrics_loga_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v 
+						if is_cognitive_override 
+						   || contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), k)	
+						   || contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), "*")
+						   || length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) == 0
+					]
+					logs_evh_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].logs : v 
+						if (
+							type_key == "cognitive_accounts"
+							&& contains(keys(local.cognitive_accounts), resource_value.name)
+							&& k == "Audit"
+					)  
+					 || (
+						type_key != "cognitive_accounts"
+						&& !(contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), k)
+						&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "logs", []), "*"))
+					 )&& length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
+					]
+					metrics_evh_targets = [ for k, v in data.azurerm_monitor_diagnostic_categories.env[type_key].metrics : v 
+						if !is_cognitive_override
+							&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), k)
+							&& !contains(lookup(lookup(local.diag_logging_loga_targets, type_key, {}), "metrics", []), "*")
+							&& length([ for k, v in local.regions : v.name_short if resource_value.location == lower(replace(v.name, " ", "")) ]) != 0
+					]
+				}
+			if !contains(lookup(local.my_env, "diag_logging_excluded_resource_groups", []), resource_value.resource_group_name) ]
+		]
+		# Turning on the SQLSecurityAuditEvents sink for master DB conflicts with turning on auditing at the instance level, so this object will not be manipulated.
+	)) : lower(replace(v.resource_id, "/", "_")) => v if length(regexall("/databases/master", v.resource_id)) == 0 }) : {}
 )
 
 diag_settings_storage_sub_iterator = (local.site_type == "primary" ? ({ for k, v in (flatten(
@@ -193,7 +103,9 @@ diag_settings_storage_sub_iterator = (local.site_type == "primary" ? ({ for k, v
 		]
 	)) : "${v.resource_name}_${v.sub_key}" => v }) : {}
 )
+
 }
+
 # This can't be scoped to only the primary region, because storage account sub diag settings use logic which needs it
 data "azurerm_resources" "diag" {
 	for_each = local.diag_logging_resource_types
