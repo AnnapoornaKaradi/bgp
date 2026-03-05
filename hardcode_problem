@@ -1,0 +1,54 @@
+We should be leveraging azuread_application resources as oppose to hardcodding object ids into the codebase - https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application
+
+Goal is to remove as much of these and use references intstead.
+Image
+
+https://dev.azure.com/ServiceLink/SystemAdmin/_git/EXOSBaseInfra-config?path=/terraform/globals/servicelink_environments.tf&version=GBmaster&line=794&lineEnd=802&lineStartColumn=1&lineEndColumn=4&lineStyle=plain&_a=contents
+
+Example pattern for Keyvault access to using references:
+
+            exos_services_uai_access_policies = merge(
+                { printproxysvc = {
+                    uai_ref = "printproxysvc"
+                    key_permissions = []
+                    secret_permissions = [ "Get", "List" ]
+                    certificate_permissions = []
+                }},
+            )
+https://dev.azure.com/ServiceLink/SystemAdmin/_git/EXOSBaseInfra-config?path=/terraform/globals/key_vaults_spec.tf&version=GBfeature/862809---Add-access-policies-for-ADF-app-identity-to-ADL-Keyvault&line=469&lineEnd=476&lineStartColumn=1&lineEndColumn=5&lineStyle=plain&_a=contents
+
+
+For implementation on ADF Identities in --- >> Task 862809 Add access policies for ADF app identity to ADL Key vault
+Task to grant access to :
+adf-app-dev2-eus2-01
+adf-app-uat2-eus2-01
+adf-app-perf-eus2-01
+adf-app-perf-wus2-01
+adf-app-stage-eus2-01
+adf-app-prod-eus2-01
+adf-app-prod-wus2-01
+Suggested pattern sample logic in key_vault.spec:
+adl = {
+            name = "adl"
+            numeric = "01"
+            rg_ref = "app"
+            skip_declarative_perms = local.envs_to_exceptions["${var.env_ref}_kv_non_declarative_perms"]
+            access_policies = merge(
+                local.key_vaults_env_base_access_policies,
+                {
+                    material_user_group = {
+                        object_id = local.my_mg.rbac.kv_material_user_group_oid
+                        key_permissions = [ "Get", "List", "Sign", "Verify" ],
+                        secret_permissions = [ "Get", "List" ],
+                        certificate_permissions = []
+                    }
+                    adf_identity_access_policy = {
+                        identity_ref = "adf-app-dev2-eus2-01" ## Code that will parse the name of the identity
+                        key_permissions = []
+                        secret_permissions = [ "Get", "List" ]
+                        certificate_permissions = []
+                    }
+                }
+            )
+
+Remaining piece of code will need to be done where the keyvault.tf and fetch the Azuread_application.
