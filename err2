@@ -1,0 +1,10 @@
+Error: Unsupported attribute
+
+  on key_vaults.tf line 284, in resource "azurerm_key_vault_access_policy" "env":
+ 284: 					object_id = policy_value.object_id
+
+This object does not have an attribute named "object_id".
+
+Terraform Plan Exit Code: 1
+
+##[error]Script failed with exit code: 1
