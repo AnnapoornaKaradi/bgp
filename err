@@ -1,0 +1,13 @@
+Error: Inconsistent conditional result types
+
+  on key_vaults.tf line 198, in resource "azurerm_key_vault" "env":
+ 198: 		for_each = lookup(each.value, "skip_declarative_perms", false) ? {} : each.value.access_policies
+    |----------------
+    | each.value is object with 7 attributes
+    | each.value.access_policies is object with 6 attributes
+
+The true and false result expressions must have consistent types. The given
+expressions are object and object, respectively.
+
+Terraform Plan Exit Code: 1
+
