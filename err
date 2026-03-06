@@ -1,13 +1,18 @@
-Error: Inconsistent conditional result types
+Error: Reference to undeclared resource
 
-  on key_vaults.tf line 198, in resource "azurerm_key_vault" "env":
- 198: 		for_each = lookup(each.value, "skip_declarative_perms", false) ? {} : each.value.access_policies
-    |----------------
-    | each.value is object with 7 attributes
-    | each.value.access_policies is object with 6 attributes
+  on key_vaults.tf line 284, in resource "azurerm_key_vault_access_policy" "env":
+ 284: 					object_id = try(access_policy.value.object_id, data.azuread_service_principal.kv_identity_refs[access_policy.value.identity_ref].object_id)
 
-The true and false result expressions must have consistent types. The given
-expressions are object and object, respectively.
+A managed resource "access_policy" "value" has not been declared in the root
+module.
+
+
+Error: Reference to undeclared resource
+
+  on key_vaults.tf line 284, in resource "azurerm_key_vault_access_policy" "env":
+ 284: 					object_id = try(access_policy.value.object_id, data.azuread_service_principal.kv_identity_refs[access_policy.value.identity_ref].object_id)
+
+A managed resource "access_policy" "value" has not been declared in the root
+module.
 
 Terraform Plan Exit Code: 1
-
