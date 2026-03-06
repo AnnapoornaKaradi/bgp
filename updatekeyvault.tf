@@ -195,7 +195,8 @@ resource "azurerm_key_vault" "env" {
 	sku_name = "premium"
 	
 	dynamic "access_policy" {
-		for_each = lookup(each.value, "skip_declarative_perms", false) ? {} : each.value.access_policies
+		for_each = lookup(each.value, "skip_declarative_perms", false) ? tomap({}) : tomap(each.value.access_policies)
+		iterator = access_policy
 
 		content {
 			tenant_id = var.tenant_id
@@ -280,7 +281,7 @@ resource "azurerm_key_vault_access_policy" "env" {
 				{
 					vault_key = vault_key
 					policy_key = policy_key
-					object_id = policy_value.object_id
+					object_id = try(access_policy.value.object_id, data.azuread_service_principal.kv_identity_refs[access_policy.value.identity_ref].object_id)
 					key_permissions = policy_value.key_permissions
 					secret_permissions = policy_value.secret_permissions
 					certificate_permissions = policy_value.certificate_permissions
