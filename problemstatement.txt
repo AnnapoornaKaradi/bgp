@@ -1,0 +1,8 @@
+Purpose:
+The service will enable real-time messaging and websocket communication for the proxy and mobile app clients. This is required to support development and testing of websocket-based proxy services, as outlined in the project structure for ClosingAutomationSvc.
+
+Requirements:
+Azure Web Pub Sub resource in dev2 subscription.
+Access credentials and connection string to be shared with the development team.
+Standard SKU (unless otherwise advised).
+Resource naming convention: webpubsub-app-dev2-eus2-01 (or as per infra standards).
