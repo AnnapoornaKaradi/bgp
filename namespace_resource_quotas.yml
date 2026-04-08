@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: gpsdev-res-quota
+  namespace: gps-aks-dev
+  labels:
+    fnf_app_id1: "17"
+    fnf_app_name: "GlobalPremierServices"
+    fnf_businessservice_id: "17.DEV"
+    fnf_costcenter: "01400.901302.160"
+    fnf_datacenter: "Azure"
+    fnf_lineofbusiness_id: "1"
+    fnf_parenthosting_id: "2.1"
+spec:
+  hard:
+    limits.cpu: "6"
+    limits.memory: 8Gi
+    requests.cpu: "3"
+    requests.memory: 8Gi
+    pods: "12"

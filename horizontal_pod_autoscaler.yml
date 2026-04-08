@@ -1,0 +1,71 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: identity-api-development-hpa
+  namespace: gps-aks-dev
+  labels:
+    fnf_app_id1: "17"
+    fnf_app_name: "GlobalPremierServices"
+    fnf_businessservice_id: "17.DEV"
+    fnf_costcenter: "01400.901302.160"
+    fnf_datacenter: "Azure"
+    fnf_lineofbusiness_id: "1"
+    fnf_parenthosting_id: "2.1"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: identity-api-development
+    #minReplicas: 1
+  maxReplicas: 3
+  #targetCPUUtilizationPercentage: 90
+  #targetMemoryUtilizationPercentage: 90
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 90
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 90
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: netsellers-api-development-hpa
+  namespace: gps-aks-dev
+  labels:
+    fnf_app_id1: "17"
+    fnf_app_name: "GlobalPremierServices"
+    fnf_businessservice_id: "17.DEV"
+    fnf_costcenter: "01400.901302.160"
+    fnf_datacenter: "Azure"
+    fnf_lineofbusiness_id: "1"
+    fnf_parenthosting_id: "2.1"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: netsellers-api-development
+    #minReplicas: 1
+  maxReplicas: 3
+  #targetCPUUtilizationPercentage: 90
+  #targetMemoryUtilizationPercentage: 90
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 90
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 90
